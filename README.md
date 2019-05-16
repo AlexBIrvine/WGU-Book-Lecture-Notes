@@ -1,2 +1,3 @@
-# Puplic-Notes
-Notes from WGU's Comptuer Science track
+# Public-Notes
+
+Notes from WGU's Computer Science track
