@@ -1,3 +1,5 @@
+# Computer Architecture – C952
+
 ## Chapter 1 - Welcome
 
 [This chapter consists of a WGU pacing guide and extremely short overview. Pretty pointless to take notes.]
