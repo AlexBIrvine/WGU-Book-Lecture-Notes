@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css"
+      integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/texmath.css" />
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/vscode-texmath.css"
+    />
+  </head>
+  <body class="markdown-body">
+    <h1
+      id="module-14---counting-with-permutations-and-combinations"
+      data-line="5"
+      class="code-line"
+    >
+      Module 14 - Counting with Permutations and Combinations
+    </h1>
+    <h2 id="47---counting-permutations" data-line="7" class="code-line">
+      4.7 - Counting permutations
+    </h2>
+    <p data-line="9" class="code-line">
+      Instead of previous counts where the order doesn't matter, permutations means that the order
+      matters.<br />
+      <strong>r-permutations</strong> - permutations of length r taken from the same set without
+      repetitions.
+    </p>
+    <p data-line="12" class="code-line">
+      The <em>generalized product rule</em> is used here. If you are finding 4-permutations of a set
+      of 10 items, then you have
+      <span class="katex"
+        ><span class="katex-mathml"
+          ><math
+            ><semantics
+              ><mrow><mn>10</mn><mo>∗</mo><mn>9</mn><mo>∗</mo><mn>8</mn><mo>∗</mo><mn>7</mn></mrow
+              ><annotation encoding="application/x-tex">10 * 9 * 8 * 7</annotation></semantics
+            ></math
+          ></span
+        ><span class="katex-html" aria-hidden="true"
+          ><span class="base"
+            ><span class="strut" style="height:0.64444em;vertical-align:0em;"></span
+            ><span class="mord">1</span><span class="mord">0</span
+            ><span class="mspace" style="margin-right:0.2222222222222222em;"></span
+            ><span class="mbin">∗</span
+            ><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span
+          ><span class="base"
+            ><span class="strut" style="height:0.64444em;vertical-align:0em;"></span
+            ><span class="mord">9</span
+            ><span class="mspace" style="margin-right:0.2222222222222222em;"></span
+            ><span class="mbin">∗</span
+            ><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span
+          ><span class="base"
+            ><span class="strut" style="height:0.64444em;vertical-align:0em;"></span
+            ><span class="mord">8</span
+            ><span class="mspace" style="margin-right:0.2222222222222222em;"></span
+            ><span class="mbin">∗</span
+            ><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span
+          ><span class="base"
+            ><span class="strut" style="height:0.64444em;vertical-align:0em;"></span
+            ><span class="mord">7</span></span
+          ></span
+        ></span
+      >
+      different possibilities.
+    </p>
+    <p data-line="14" class="code-line">
+      <strong>permutation</strong> (without the leading &quot;r-&quot;) is a sequence that contains
+      every element of a finite set exactly once.
+    </p>
+    <p data-line="16" class="code-line">Formulas:</p>
+    <ol>
+      <li data-line="18" class="code-line">
+        <strong>r-permutation</strong> =
+        <span class="katex"
+          ><span class="katex-mathml"
+            ><math
+              ><semantics
+                ><mrow
+                  ><mi>P</mi><mo>(</mo><mi>n</mi><mo separator="true">,</mo><mi>r</mi><mo>)</mo
+                  ><mo>=</mo
+                  ><mfrac
+                    ><mrow><mi>n</mi><mo>!</mo></mrow
+                    ><mrow
+                      ><mo>(</mo><mi>n</mi><mo>−</mo><mi>r</mi><mo>)</mo><mo>!</mo></mrow
+                    ></mfrac
+                  ></mrow
+                ><annotation encoding="application/x-tex"
+                  >P(n,r) = \frac{n!}{(n-r)!}</annotation
+                ></semantics
+              ></math
+            ></span
+          ><span class="katex-html" aria-hidden="true"
+            ><span class="base"
+              ><span class="strut" style="height:1em;vertical-align:-0.25em;"></span
+              ><span class="mord mathdefault" style="margin-right:0.13889em;">P</span
+              ><span class="mopen">(</span><span class="mord mathdefault">n</span
+              ><span class="mpunct">,</span
+              ><span class="mspace" style="margin-right:0.16666666666666666em;"></span
+              ><span class="mord mathdefault" style="margin-right:0.02778em;">r</span
+              ><span class="mclose">)</span
+              ><span class="mspace" style="margin-right:0.2777777777777778em;"></span
+              ><span class="mrel">=</span
+              ><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span
+            ><span class="base"
+              ><span class="strut" style="height:1.400108em;vertical-align:-0.52em;"></span
+              ><span class="mord"
+                ><span class="mopen nulldelimiter"></span
+                ><span class="mfrac"
+                  ><span class="vlist-t vlist-t2"
+                    ><span class="vlist-r"
+                      ><span class="vlist" style="height:0.8801079999999999em;"
+                        ><span style="top:-2.655em;"
+                          ><span class="pstrut" style="height:3em;"></span
+                          ><span class="sizing reset-size6 size3 mtight"
+                            ><span class="mord mtight"
+                              ><span class="mopen mtight">(</span
+                              ><span class="mord mathdefault mtight">n</span
+                              ><span class="mbin mtight">−</span
+                              ><span class="mord mathdefault mtight" style="margin-right:0.02778em;"
+                                >r</span
+                              ><span class="mclose mtight">)</span
+                              ><span class="mclose mtight">!</span></span
+                            ></span
+                          ></span
+                        ><span style="top:-3.23em;"
+                          ><span class="pstrut" style="height:3em;"></span
+                          ><span class="frac-line" style="border-bottom-width:0.04em;"></span></span
+                        ><span style="top:-3.394em;"
+                          ><span class="pstrut" style="height:3em;"></span
+                          ><span class="sizing reset-size6 size3 mtight"
+                            ><span class="mord mtight"
+                              ><span class="mord mathdefault mtight">n</span
+                              ><span class="mclose mtight">!</span></span
+                            ></span
+                          ></span
+                        ></span
+                      ><span class="vlist-s">​</span></span
+                    ><span class="vlist-r"
+                      ><span class="vlist" style="height:0.52em;"
+                        ><span></span></span></span></span></span
+                ><span class="mclose nulldelimiter"></span></span></span></span></span
+        ><br />
+        A sequence of r items chosen from n total items in which the order of the items matters.
+      </li>
+      <li data-line="20" class="code-line">
+        <strong>Permutation</strong> =
+        <span class="katex"
+          ><span class="katex-mathml"
+            ><math
+              ><semantics
+                ><mrow
+                  ><mi>P</mi><mo>(</mo><mi>n</mi><mo separator="true">,</mo><mi>n</mi><mo>)</mo
+                  ><mo>=</mo><mi>n</mi><mo>!</mo></mrow
+                ><annotation encoding="application/x-tex">P(n,n) = n!</annotation></semantics
+              ></math
+            ></span
+          ><span class="katex-html" aria-hidden="true"
+            ><span class="base"
+              ><span class="strut" style="height:1em;vertical-align:-0.25em;"></span
+              ><span class="mord mathdefault" style="margin-right:0.13889em;">P</span
+              ><span class="mopen">(</span><span class="mord mathdefault">n</span
+              ><span class="mpunct">,</span
+              ><span class="mspace" style="margin-right:0.16666666666666666em;"></span
+              ><span class="mord mathdefault">n</span><span class="mclose">)</span
+              ><span class="mspace" style="margin-right:0.2777777777777778em;"></span
+              ><span class="mrel">=</span
+              ><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span
+            ><span class="base"
+              ><span class="strut" style="height:0.69444em;vertical-align:0em;"></span
+              ><span class="mord mathdefault">n</span><span class="mclose">!</span></span
+            ></span
+          ></span
+        ><br />
+        A sequence of n items in which the order of the items matters and every item in a set is
+        included exactly once.
+      </li>
+      <li data-line="22" class="code-line">
+        <strong>r-Subset / r-combination</strong> =
+        <span class="katex"
+          ><span class="katex-mathml"
+            ><math
+              ><semantics
+                ><mrow
+                  ><mi>C</mi><mo>(</mo><mi>n</mi><mo separator="true">,</mo><mi>r</mi><mo>)</mo
+                  ><mo>=</mo
+                  ><mrow
+                    ><mo fence="true">(</mo><mfrac linethickness="0px"><mi>n</mi><mi>r</mi></mfrac
+                    ><mo fence="true">)</mo></mrow
+                  ><mo>=</mo
+                  ><mfrac
+                    ><mrow><mi>n</mi><mo>!</mo></mrow
+                    ><mrow
+                      ><mi>r</mi><mo>!</mo><mo>(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo>)</mo
+                      ><mo>!</mo></mrow
+                    ></mfrac
+                  ></mrow
+                ><annotation encoding="application/x-tex"
+                  >C(n,r) = \binom{n}{r} = \frac{n!}{r!(n-1)!}</annotation
+                ></semantics
+              ></math
+            ></span
+          ><span class="katex-html" aria-hidden="true"
+            ><span class="base"
+              ><span class="strut" style="height:1em;vertical-align:-0.25em;"></span
+              ><span class="mord mathdefault" style="margin-right:0.07153em;">C</span
+              ><span class="mopen">(</span><span class="mord mathdefault">n</span
+              ><span class="mpunct">,</span
+              ><span class="mspace" style="margin-right:0.16666666666666666em;"></span
+              ><span class="mord mathdefault" style="margin-right:0.02778em;">r</span
+              ><span class="mclose">)</span
+              ><span class="mspace" style="margin-right:0.2777777777777778em;"></span
+              ><span class="mrel">=</span
+              ><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span
+            ><span class="base"
+              ><span class="strut" style="height:1.20001em;vertical-align:-0.35001em;"></span
+              ><span class="mord"
+                ><span class="mopen delimcenter" style="top:0em;"
+                  ><span class="delimsizing size1">(</span></span
+                ><span class="mfrac"
+                  ><span class="vlist-t vlist-t2"
+                    ><span class="vlist-r"
+                      ><span class="vlist" style="height:0.7453919999999999em;"
+                        ><span style="top:-2.3550000000000004em;"
+                          ><span class="pstrut" style="height:2.7em;"></span
+                          ><span class="sizing reset-size6 size3 mtight"
+                            ><span class="mord mtight"
+                              ><span class="mord mathdefault mtight" style="margin-right:0.02778em;"
+                                >r</span
+                              ></span
+                            ></span
+                          ></span
+                        ><span style="top:-3.144em;"
+                          ><span class="pstrut" style="height:2.7em;"></span
+                          ><span class="sizing reset-size6 size3 mtight"
+                            ><span class="mord mtight"
+                              ><span class="mord mathdefault mtight">n</span></span
+                            ></span
+                          ></span
+                        ></span
+                      ><span class="vlist-s">​</span></span
+                    ><span class="vlist-r"
+                      ><span class="vlist" style="height:0.345em;"
+                        ><span></span></span></span></span></span
+                ><span class="mclose delimcenter" style="top:0em;"
+                  ><span class="delimsizing size1">)</span></span
+                ></span
+              ><span class="mspace" style="margin-right:0.2777777777777778em;"></span
+              ><span class="mrel">=</span
+              ><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span
+            ><span class="base"
+              ><span class="strut" style="height:1.400108em;vertical-align:-0.52em;"></span
+              ><span class="mord"
+                ><span class="mopen nulldelimiter"></span
+                ><span class="mfrac"
+                  ><span class="vlist-t vlist-t2"
+                    ><span class="vlist-r"
+                      ><span class="vlist" style="height:0.8801079999999999em;"
+                        ><span style="top:-2.655em;"
+                          ><span class="pstrut" style="height:3em;"></span
+                          ><span class="sizing reset-size6 size3 mtight"
+                            ><span class="mord mtight"
+                              ><span class="mord mathdefault mtight" style="margin-right:0.02778em;"
+                                >r</span
+                              ><span class="mclose mtight">!</span
+                              ><span class="mopen mtight">(</span
+                              ><span class="mord mathdefault mtight">n</span
+                              ><span class="mbin mtight">−</span><span class="mord mtight">1</span
+                              ><span class="mclose mtight">)</span
+                              ><span class="mclose mtight">!</span></span
+                            ></span
+                          ></span
+                        ><span style="top:-3.23em;"
+                          ><span class="pstrut" style="height:3em;"></span
+                          ><span class="frac-line" style="border-bottom-width:0.04em;"></span></span
+                        ><span style="top:-3.394em;"
+                          ><span class="pstrut" style="height:3em;"></span
+                          ><span class="sizing reset-size6 size3 mtight"
+                            ><span class="mord mtight"
+                              ><span class="mord mathdefault mtight">n</span
+                              ><span class="mclose mtight">!</span></span
+                            ></span
+                          ></span
+                        ></span
+                      ><span class="vlist-s">​</span></span
+                    ><span class="vlist-r"
+                      ><span class="vlist" style="height:0.52em;"
+                        ><span></span></span></span></span></span
+                ><span class="mclose nulldelimiter"></span></span></span></span></span
+        ><br />
+        A sequence of r items chosen from n total items in which the order of the items does
+        <em>not</em> matter.
+      </li>
+    </ol>
+    <hr />
+    <h2 id="48---counting-subsets" data-line="27" class="code-line">4.8 - Counting subsets</h2>
+    <p data-line="29" class="code-line">
+      <strong>Combinations (or subsets)</strong> - counting from a group when the order doesn't
+      matters.<br />
+      In order to count subsets/combinations, use the 3rd formula from the lesson above.
+    </p>
+    <p data-line="32" class="code-line">
+      In the binomial
+      <span class="katex"
+        ><span class="katex-mathml"
+          ><math
+            ><semantics
+              ><mrow
+                ><mo fence="true">(</mo><mfrac linethickness="0px"><mi>n</mi><mi>r</mi></mfrac
+                ><mo fence="true">)</mo></mrow
+              ><annotation encoding="application/x-tex">\binom{n}{r}</annotation></semantics
+            ></math
+          ></span
+        ><span class="katex-html" aria-hidden="true"
+          ><span class="base"
+            ><span class="strut" style="height:1.20001em;vertical-align:-0.35001em;"></span
+            ><span class="mord"
+              ><span class="mopen delimcenter" style="top:0em;"
+                ><span class="delimsizing size1">(</span></span
+              ><span class="mfrac"
+                ><span class="vlist-t vlist-t2"
+                  ><span class="vlist-r"
+                    ><span class="vlist" style="height:0.7453919999999999em;"
+                      ><span style="top:-2.3550000000000004em;"
+                        ><span class="pstrut" style="height:2.7em;"></span
+                        ><span class="sizing reset-size6 size3 mtight"
+                          ><span class="mord mtight"
+                            ><span class="mord mathdefault mtight" style="margin-right:0.02778em;"
+                              >r</span
+                            ></span
+                          ></span
+                        ></span
+                      ><span style="top:-3.144em;"
+                        ><span class="pstrut" style="height:2.7em;"></span
+                        ><span class="sizing reset-size6 size3 mtight"
+                          ><span class="mord mtight"
+                            ><span class="mord mathdefault mtight">n</span></span
+                          ></span
+                        ></span
+                      ></span
+                    ><span class="vlist-s">​</span></span
+                  ><span class="vlist-r"
+                    ><span class="vlist" style="height:0.345em;"
+                      ><span></span></span></span></span></span
+              ><span class="mclose delimcenter" style="top:0em;"
+                ><span class="delimsizing size1">)</span></span
+              ></span
+            ></span
+          ></span
+        ></span
+      >
+      it's read: &quot;n choose r&quot;, or &quot;from the set n, choose r choices for the
+      subset&quot;
+    </p>
+    <p data-line="34" class="code-line">
+      <strong>Identity for combinations</strong>
+      <span class="katex"
+        ><span class="katex-mathml"
+          ><math
+            ><semantics
+              ><mrow
+                ><mrow
+                  ><mo fence="true">(</mo
+                  ><mfrac linethickness="0px"
+                    ><mi>n</mi><mrow><mi>n</mi><mo>−</mo><mi>r</mi></mrow></mfrac
+                  ><mo fence="true">)</mo></mrow
+                ><mo>≡</mo
+                ><mrow
+                  ><mo fence="true">(</mo><mfrac linethickness="0px"><mi>n</mi><mi>r</mi></mfrac
+                  ><mo fence="true">)</mo></mrow
+                ></mrow
+              ><annotation encoding="application/x-tex"
+                >\binom{n}{n-r} \equiv \binom{n}{r}</annotation
+              ></semantics
+            ></math
+          ></span
+        ><span class="katex-html" aria-hidden="true"
+          ><span class="base"
+            ><span class="strut" style="height:1.253331em;vertical-align:-0.403331em;"></span
+            ><span class="mord"
+              ><span class="mopen delimcenter" style="top:0em;"
+                ><span class="delimsizing size1">(</span></span
+              ><span class="mfrac"
+                ><span class="vlist-t vlist-t2"
+                  ><span class="vlist-r"
+                    ><span class="vlist" style="height:0.745392em;"
+                      ><span style="top:-2.355em;"
+                        ><span class="pstrut" style="height:2.7em;"></span
+                        ><span class="sizing reset-size6 size3 mtight"
+                          ><span class="mord mtight"
+                            ><span class="mord mathdefault mtight">n</span
+                            ><span class="mbin mtight">−</span
+                            ><span class="mord mathdefault mtight" style="margin-right:0.02778em;"
+                              >r</span
+                            ></span
+                          ></span
+                        ></span
+                      ><span style="top:-3.144em;"
+                        ><span class="pstrut" style="height:2.7em;"></span
+                        ><span class="sizing reset-size6 size3 mtight"
+                          ><span class="mord mtight"
+                            ><span class="mord mathdefault mtight">n</span></span
+                          ></span
+                        ></span
+                      ></span
+                    ><span class="vlist-s">​</span></span
+                  ><span class="vlist-r"
+                    ><span class="vlist" style="height:0.403331em;"
+                      ><span></span></span></span></span></span
+              ><span class="mclose delimcenter" style="top:0em;"
+                ><span class="delimsizing size1">)</span></span
+              ></span
+            ><span class="mspace" style="margin-right:0.2777777777777778em;"></span
+            ><span class="mrel">≡</span
+            ><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span
+          ><span class="base"
+            ><span class="strut" style="height:1.20001em;vertical-align:-0.35001em;"></span
+            ><span class="mord"
+              ><span class="mopen delimcenter" style="top:0em;"
+                ><span class="delimsizing size1">(</span></span
+              ><span class="mfrac"
+                ><span class="vlist-t vlist-t2"
+                  ><span class="vlist-r"
+                    ><span class="vlist" style="height:0.7453919999999999em;"
+                      ><span style="top:-2.3550000000000004em;"
+                        ><span class="pstrut" style="height:2.7em;"></span
+                        ><span class="sizing reset-size6 size3 mtight"
+                          ><span class="mord mtight"
+                            ><span class="mord mathdefault mtight" style="margin-right:0.02778em;"
+                              >r</span
+                            ></span
+                          ></span
+                        ></span
+                      ><span style="top:-3.144em;"
+                        ><span class="pstrut" style="height:2.7em;"></span
+                        ><span class="sizing reset-size6 size3 mtight"
+                          ><span class="mord mtight"
+                            ><span class="mord mathdefault mtight">n</span></span
+                          ></span
+                        ></span
+                      ></span
+                    ><span class="vlist-s">​</span></span
+                  ><span class="vlist-r"
+                    ><span class="vlist" style="height:0.345em;"
+                      ><span></span></span></span></span></span
+              ><span class="mclose delimcenter" style="top:0em;"
+                ><span class="delimsizing size1">)</span></span
+              ></span
+            ></span
+          ></span
+        ></span
+      ><br />
+      In other words, &quot;12 choose 8&quot;
+      <span class="katex"
+        ><span class="katex-mathml"
+          ><math
+            ><semantics
+              ><mrow><mo>≡</mo></mrow
+              ><annotation encoding="application/x-tex">\equiv</annotation></semantics
+            ></math
+          ></span
+        ><span class="katex-html" aria-hidden="true"
+          ><span class="base"
+            ><span class="strut" style="height:0.46375em;vertical-align:0em;"></span
+            ><span class="mrel">≡</span></span
+          ></span
+        ></span
+      >
+      &quot;12 choose 4&quot;
+    </p>
+    <hr />
+    <h2 id="49---subset-and-permutation-examples" data-line="39" class="code-line">
+      4.9 - Subset and permutation examples
+    </h2>
+    <p data-line="41" class="code-line">(Just exercises for the above two sections)</p>
+    <hr />
+    <h2 id="410---permutations-with-repetitions" data-line="45" class="code-line">
+      4.10 - Permutations with repetitions
+    </h2>
+    <p data-line="47" class="code-line">
+      Sometimes in permutations, a value will be repeated and the order will not matter for any
+      repeated outcome.<br />
+      For example, the string &quot;Good&quot;, and &quot;Good&quot; are different (the two
+      &quot;o&quot;s are swapped) but it doesn't matter since the outcome is the same.<br />
+      This is called <strong>permutation with repetition.</strong>
+    </p>
+    <p data-line="51" class="code-line">
+      <em>Useful illustation:</em><br />
+      <img
+        src="./../Img/14.1.JPG"
+        alt="14.1"
+        class="loading"
+        id="image-hash-31c3dee13d23e4d48306e606a85ede599ac0216ec36e46feed8c285842252834"
+      />
+    </p>
+  </body>
+</html>

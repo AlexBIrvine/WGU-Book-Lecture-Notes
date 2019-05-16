@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css"
+      integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/texmath.css" />
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/vscode-texmath.css"
+    />
+  </head>
+  <body class="markdown-body">
+    <h1 id="module-11---recursive-structures" data-line="5" class="code-line">
+      Module 11 - Recursive Structures
+    </h1>
+    <h2 id="315---overview-of-recursive-definitions" data-line="7" class="code-line">
+      3.15 - Overview of recursive definitions
+    </h2>
+    <p data-line="9" class="code-line">
+      <strong>Recursion</strong> - The process of computing the value of a function using the result
+      of the function on smaller input values.
+    </p>
+    <p data-line="11" class="code-line">
+      In other words, it's a funciton that calls itself using a smaller value. It will keep calling
+      itself until it hits a base case.
+    </p>
+    <p data-line="13" class="code-line">A famous example is factorials. For a factorial N:</p>
+    <pre><code data-line="15" class="code-line language-(javascript)"><code><div>function factorial (n) {
+  return ( n === 0 ? 1 : n * factorial(n-1) );
+}
+
+</div></code></code></pre>
+    <hr />
+    <h2 id="316---recursively-defined-sets" data-line="24" class="code-line">
+      3.16 - Recursively defined sets
+    </h2>
+    <p data-line="26" class="code-line">
+      Components of a recursively defined set:<br />
+      <strong>Basis</strong> - explicitly states that one or more specific elements are in the
+      set.<br />
+      <strong>recursive rule</strong> - shows how to construct larger elements in the set from
+      elements already known to be in the set.<br />
+      <strong>exclusion statement</strong> - states that an element is in the set only if it is
+      given in the basis or can be constructed by applying the recursive rules repeatedly to
+      elements given in the basis.
+    </p>
+    <p data-line="31" class="code-line">
+      An example of this is found in figuring out if nested parenthesis are correct. The
+      <strong>basis</strong> in this example is the sequence () is properly nested. This has two
+      <strong>recursive rules</strong>:
+    </p>
+    <ol>
+      <li data-line="33" class="code-line">(u) is properly nested</li>
+      <li data-line="34" class="code-line">uv is properly nested</li>
+    </ol>
+    <p data-line="36" class="code-line">
+      Our <strong>exclusion statement</strong> is: a string is properly nested only if it is given
+      in the basis or can be constructed by applying the recursive rules to strings in the basis.
+    </p>
+    <p data-line="38" class="code-line">
+      So using our recursive rules: () is correct, (()) is correct [(u)], and ()() is correct [uv]
+    </p>
+    <hr />
+    <h2 id="317---recursive-definition-for-perfect-binary-trees" data-line="42" class="code-line">
+      3.17 - Recursive definition for perfect binary trees
+    </h2>
+    <ol>
+      <li data-line="44" class="code-line">
+        Start with a single node, this will be our &quot;tree&quot;.
+      </li>
+      <li data-line="45" class="code-line">Copy your existing tree.</li>
+      <li data-line="46" class="code-line">
+        Place your copied tree along side of your existing tree.
+      </li>
+      <li data-line="47" class="code-line">
+        Add another node above, making it a parent of both trees.
+      </li>
+      <li data-line="48" class="code-line">Repeat steps 2-4 as much as you like.</li>
+    </ol>
+    <p data-line="50" class="code-line">
+      <img
+        src="./../Img/11.1.JPG"
+        alt="11.1"
+        class="loading"
+        id="image-hash-d879954b33ece5795c2d2e7489a32c36908aac4d27fce7c2d8bb04be32bf1a5c"
+      />
+    </p>
+    <hr />
+    <h2 id="318---recursiveinductive-algorithms" data-line="54" class="code-line">
+      3.18 - Recursive/inductive algorithms
+    </h2>
+    <p data-line="56" class="code-line">
+      <strong>Recursive Algorithm</strong> - an algorithm that calls itself.
+    </p>
+  </body>
+</html>

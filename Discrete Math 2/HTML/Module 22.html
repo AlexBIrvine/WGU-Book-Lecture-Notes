@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css"
+      integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/texmath.css" />
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/vscode-texmath.css"
+    />
+  </head>
+  <body class="markdown-body">
+    <h1 id="module-22---nondeterministic-finite-state-machine-2" data-line="5" class="code-line">
+      Module 22 - Nondeterministic Finite State Machine
+    </h1>
+    <h2 id="610---nondeterministic-finite-automata-nfa-2" data-line="7" class="code-line">
+      6.10 - Nondeterministic finite automata (NFA)
+    </h2>
+    <p data-line="9" class="code-line">
+      <strong>Nondeterministic Finite Automata (NFA)</strong> - A finite state automaton whose next
+      state is not uniquely determined by the current state and the next input symbol.
+    </p>
+    <p data-line="11" class="code-line">
+      <strong
+        >Epsilon Transition (<span class="katex"
+          ><span class="katex-mathml"
+            ><math
+              ><semantics
+                ><mrow><mi>ε</mi></mrow
+                ><annotation encoding="application/x-tex">\varepsilon</annotation></semantics
+              ></math
+            ></span
+          ><span class="katex-html" aria-hidden="true"
+            ><span class="base"
+              ><span class="strut" style="height:0.43056em;vertical-align:0em;"></span
+              ><span class="mord mathdefault">ε</span></span
+            ></span
+          ></span
+        >)</strong
+      >
+      - A transition from one state to another without reading an input.
+    </p>
+    <p data-line="13" class="code-line">
+      <img
+        src="./../Img/22.1.JPG"
+        alt="22.1"
+        class="loading"
+        id="image-hash-eba64c642473a848fc87d0e7c8500449d7e9a489891073b7328305d68dcee655"
+      />
+    </p>
+    <hr />
+    <h2 id="611---nfa-state-diagrams-2" data-line="17" class="code-line">
+      6.11 - NFA state diagrams
+    </h2>
+    <p data-line="19" class="code-line">
+      The NFA diagram is similar to the DFA, only it resembles more of a tree structure.
+    </p>
+    <p data-line="21" class="code-line">
+      <img
+        src="./../Img/22.2.JPG"
+        alt="22.2"
+        class="loading"
+        id="image-hash-29dc849182a69eecbcd4cdbab3474cd268768c34343285cdc3a52b5de3ab1f22"
+      />
+    </p>
+    <hr />
+    <h2 id="612---nfa-state-transition-tables-2" data-line="25" class="code-line">
+      6.12 - NFA state transition tables
+    </h2>
+    <p data-line="27" class="code-line">The diagram found in 6.11 can be represented as a table:</p>
+    <p data-line="29" class="code-line">
+      <img
+        src="./../Img/22.3.JPG"
+        alt="22.3"
+        class="loading"
+        id="image-hash-1fabd8eec912ea7de4e1cba1a1e6c8c83f84b845ea9e8ff9015d766a144bb2cd"
+      />
+    </p>
+    <hr />
+    <h2 id="613---nfa-analyzing-transition-rules-2" data-line="33" class="code-line">
+      6.13 - NFA analyzing transition rules
+    </h2>
+    <p data-line="35" class="code-line">
+      When analysing inputs, you create a tree of <em>ALL</em> possible outcomes.<br />
+      Even if there is an input, you must also consider the epsilon transition of each step.<br />
+      Also add an epsilon transition at the end of the input (so an input of {1,0} becomes
+      {1,0,<span class="katex"
+        ><span class="katex-mathml"
+          ><math
+            ><semantics
+              ><mrow><mi>ε</mi></mrow
+              ><annotation encoding="application/x-tex">\varepsilon</annotation></semantics
+            ></math
+          ></span
+        ><span class="katex-html" aria-hidden="true"
+          ><span class="base"
+            ><span class="strut" style="height:0.43056em;vertical-align:0em;"></span
+            ><span class="mord mathdefault">ε</span></span
+          ></span
+        ></span
+      >})
+    </p>
+    <p data-line="39" class="code-line">
+      <img
+        src="./../Img/22.4.JPG"
+        alt="22.4"
+        class="loading"
+        id="image-hash-b59e2b6974a6d861fe73ccf95b60bae90af356b5c25aa89ab704a81d8c80cf39"
+      />
+    </p>
+    <hr />
+    <h2 id="614---nfa-evaluating-outcomes-2" data-line="43" class="code-line">
+      6.14 - NFA evaluating outcomes
+    </h2>
+    <p data-line="45" class="code-line">
+      If the machine has an accepting state outcome (indicated by double circles), then it is true
+      (accepting) if the outcome set includes the accepted state.<br />
+      Example: If the accepting outcome is {c} and the outcome set is {a,b,c}, then the outcome is
+      acceptable.
+    </p>
+    <p data-line="48" class="code-line">
+      <strong>HOWEVER</strong>, the last part of the input is what determines the output. See
+      example below:
+    </p>
+    <p data-line="50" class="code-line">
+      <img
+        src="./../Img/22.5.JPG"
+        alt="22.5"
+        class="loading"
+        id="image-hash-28bd3bf968bd02559f7a7ca4484db457e3212b5657043686c6cb0096cb4e5a33"
+      />
+    </p>
+  </body>
+</html>

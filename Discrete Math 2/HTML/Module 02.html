@@ -1,0 +1,35 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js">
+<link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+<link rel="stylesheet" href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/texmath.css">
+<link rel="stylesheet" href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/vscode-texmath.css">
+
+</head><body class="markdown-body">
+<h1 id="module-2---analyzing-algorithms" data-line="0" class="code-line">Module 2 - Analyzing Algorithms</h1>
+<h2 id="19---computational-complexity" data-line="2" class="code-line">1.9 - Computational complexity</h2>
+<p data-line="4" class="code-line"><strong>Algorithm Complexity</strong> - The study of the efficacy of algorithms that gives us a framework to compare algorithms.<br>
+<strong>Time Complexity</strong> - The ammount of time needed to perform the algorithm.<br>
+<strong>Space Complexity</strong> - The ammount of space needed to perform the algorithm.</p>
+<p data-line="8" class="code-line">Input size affects algorithm efficiency.</p>
+<hr>
+<h2 id="110---evaluating-algorithm-complexity" data-line="12" class="code-line">1.10 - Evaluating algorithm complexity</h2>
+<p data-line="14" class="code-line"><strong>Atomic Operations</strong> - Operators that cannot be further split (+, -, *, &gt;, !=, etc.,)</p>
+<p data-line="16" class="code-line">Counting atomic operations example:</p>
+<pre><code data-line="17" class="code-line"><code><div>Max: = 0
+For i: =1 to n
+    If (a[i] &gt; Max), Max: = a[i]
+End-for
+</div></code></code></pre>
+<p data-line="24" class="code-line">Number of atomic operations:</p>
+<ol>
+<li data-line="25" class="code-line">Assigning a value to a variable</li>
+<li data-line="26" class="code-line">Looking up the value of a particular element in a sequence</li>
+<li data-line="27" class="code-line">Comparing two values</li>
+<li data-line="28" class="code-line">Incrementing a value (and/or arithmetic operations such as addition and multiplication)</li>
+</ol>
+<hr>
+<h2 id="111---worst-case-analysis" data-line="32" class="code-line">1.11 - Worst-case analysis</h2>
+<p data-line="34" class="code-line">(compute the worst case scenario of a particular algorithm to make informed decisions)</p>
+
+</body></html>

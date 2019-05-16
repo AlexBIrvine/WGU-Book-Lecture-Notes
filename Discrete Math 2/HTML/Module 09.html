@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css"
+      integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/texmath.css" />
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/vscode-texmath.css"
+    />
+  </head>
+  <body class="markdown-body">
+    <h1 id="module-9---recurrence-relations" data-line="5" class="code-line">
+      Module 9 - Recurrence Relations
+    </h1>
+    <h2 id="33---introduction-to-recursive-relations" data-line="7" class="code-line">
+      3.3 - Introduction to Recursive Relations
+    </h2>
+    <p data-line="9" class="code-line">
+      <strong>Recursion</strong> - A method that finds new values using previous values.
+    </p>
+    <p data-line="11" class="code-line">
+      When discussing the
+      <span class="katex"
+        ><span class="katex-mathml"
+          ><math
+            ><semantics
+              ><mrow
+                ><msup
+                  ><mi>n</mi><mrow><mi>t</mi><mi>h</mi></mrow></msup
+                ></mrow
+              ><annotation encoding="application/x-tex">n^{th}</annotation></semantics
+            ></math
+          ></span
+        ><span class="katex-html" aria-hidden="true"
+          ><span class="base"
+            ><span class="strut" style="height:0.849108em;vertical-align:0em;"></span
+            ><span class="mord"
+              ><span class="mord mathdefault">n</span
+              ><span class="msupsub"
+                ><span class="vlist-t"
+                  ><span class="vlist-r"
+                    ><span class="vlist" style="height:0.849108em;"
+                      ><span style="top:-3.063em;margin-right:0.05em;"
+                        ><span class="pstrut" style="height:2.7em;"></span
+                        ><span class="sizing reset-size6 size3 mtight"
+                          ><span class="mord mtight"
+                            ><span class="mord mathdefault mtight">t</span
+                            ><span class="mord mathdefault mtight">h</span></span
+                          ></span
+                        ></span
+                      ></span
+                    ></span
+                  ></span
+                ></span
+              ></span
+            ></span
+          ></span
+        ></span
+      >
+      term of a sequence, it's common to write it as
+      <span class="katex"
+        ><span class="katex-mathml"
+          ><math
+            ><semantics
+              ><mrow
+                ><msub><mi>a</mi><mi>n</mi></msub></mrow
+              ><annotation encoding="application/x-tex">a_n</annotation></semantics
+            ></math
+          ></span
+        ><span class="katex-html" aria-hidden="true"
+          ><span class="base"
+            ><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span
+            ><span class="mord"
+              ><span class="mord mathdefault">a</span
+              ><span class="msupsub"
+                ><span class="vlist-t vlist-t2"
+                  ><span class="vlist-r"
+                    ><span class="vlist" style="height:0.151392em;"
+                      ><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"
+                        ><span class="pstrut" style="height:2.7em;"></span
+                        ><span class="sizing reset-size6 size3 mtight"
+                          ><span class="mord mathdefault mtight">n</span></span
+                        ></span
+                      ></span
+                    ><span class="vlist-s">​</span></span
+                  ><span class="vlist-r"
+                    ><span class="vlist" style="height:0.15em;"
+                      ><span></span></span></span></span></span></span></span></span></span
+      >.<br />
+      So the sequence {1,2,3,4,5},
+      <span class="katex"
+        ><span class="katex-mathml"
+          ><math
+            ><semantics
+              ><mrow
+                ><msub><mi>a</mi><mn>3</mn></msub
+                ><mo>=</mo><mn>3</mn></mrow
+              ><annotation encoding="application/x-tex">a_3 = 3</annotation></semantics
+            ></math
+          ></span
+        ><span class="katex-html" aria-hidden="true"
+          ><span class="base"
+            ><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span
+            ><span class="mord"
+              ><span class="mord mathdefault">a</span
+              ><span class="msupsub"
+                ><span class="vlist-t vlist-t2"
+                  ><span class="vlist-r"
+                    ><span class="vlist" style="height:0.30110799999999993em;"
+                      ><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"
+                        ><span class="pstrut" style="height:2.7em;"></span
+                        ><span class="sizing reset-size6 size3 mtight"
+                          ><span class="mord mtight">3</span></span
+                        ></span
+                      ></span
+                    ><span class="vlist-s">​</span></span
+                  ><span class="vlist-r"
+                    ><span class="vlist" style="height:0.15em;"
+                      ><span></span></span></span></span></span></span
+            ><span class="mspace" style="margin-right:0.2777777777777778em;"></span
+            ><span class="mrel">=</span
+            ><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span
+          ><span class="base"
+            ><span class="strut" style="height:0.64444em;vertical-align:0em;"></span
+            ><span class="mord">3</span></span
+          ></span
+        ></span
+      >.<br />
+      <span class="katex"
+        ><span class="katex-mathml"
+          ><math
+            ><semantics
+              ><mrow
+                ><msub
+                  ><mi>a</mi><mrow><mn>3</mn><mo>+</mo><mn>1</mn></mrow></msub
+                ><mo>=</mo><msub><mi>a</mi><mn>4</mn></msub
+                ><mo>=</mo><mn>4</mn></mrow
+              ><annotation encoding="application/x-tex">a_{3+1} = a_4 = 4</annotation></semantics
+            ></math
+          ></span
+        ><span class="katex-html" aria-hidden="true"
+          ><span class="base"
+            ><span class="strut" style="height:0.638891em;vertical-align:-0.208331em;"></span
+            ><span class="mord"
+              ><span class="mord mathdefault">a</span
+              ><span class="msupsub"
+                ><span class="vlist-t vlist-t2"
+                  ><span class="vlist-r"
+                    ><span class="vlist" style="height:0.301108em;"
+                      ><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"
+                        ><span class="pstrut" style="height:2.7em;"></span
+                        ><span class="sizing reset-size6 size3 mtight"
+                          ><span class="mord mtight"
+                            ><span class="mord mtight">3</span><span class="mbin mtight">+</span
+                            ><span class="mord mtight">1</span></span
+                          ></span
+                        ></span
+                      ></span
+                    ><span class="vlist-s">​</span></span
+                  ><span class="vlist-r"
+                    ><span class="vlist" style="height:0.208331em;"
+                      ><span></span></span></span></span></span></span
+            ><span class="mspace" style="margin-right:0.2777777777777778em;"></span
+            ><span class="mrel">=</span
+            ><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span
+          ><span class="base"
+            ><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span
+            ><span class="mord"
+              ><span class="mord mathdefault">a</span
+              ><span class="msupsub"
+                ><span class="vlist-t vlist-t2"
+                  ><span class="vlist-r"
+                    ><span class="vlist" style="height:0.30110799999999993em;"
+                      ><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"
+                        ><span class="pstrut" style="height:2.7em;"></span
+                        ><span class="sizing reset-size6 size3 mtight"
+                          ><span class="mord mtight">4</span></span
+                        ></span
+                      ></span
+                    ><span class="vlist-s">​</span></span
+                  ><span class="vlist-r"
+                    ><span class="vlist" style="height:0.15em;"
+                      ><span></span></span></span></span></span></span
+            ><span class="mspace" style="margin-right:0.2777777777777778em;"></span
+            ><span class="mrel">=</span
+            ><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span
+          ><span class="base"
+            ><span class="strut" style="height:0.64444em;vertical-align:0em;"></span
+            ><span class="mord">4</span></span
+          ></span
+        ></span
+      >
+    </p>
+    <hr />
+    <h2 id="34---evaluating-a-recursive-relation" data-line="17" class="code-line">
+      3.4 - Evaluating a Recursive Relation
+    </h2>
+    <p data-line="19" class="code-line">
+      <strong>Recursive Relation</strong> - A rule that defines a term
+      <span class="katex"
+        ><span class="katex-mathml"
+          ><math
+            ><semantics
+              ><mrow
+                ><msub><mi>a</mi><mi>n</mi></msub></mrow
+              ><annotation encoding="application/x-tex">a_n</annotation></semantics
+            ></math
+          ></span
+        ><span class="katex-html" aria-hidden="true"
+          ><span class="base"
+            ><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span
+            ><span class="mord"
+              ><span class="mord mathdefault">a</span
+              ><span class="msupsub"
+                ><span class="vlist-t vlist-t2"
+                  ><span class="vlist-r"
+                    ><span class="vlist" style="height:0.151392em;"
+                      ><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"
+                        ><span class="pstrut" style="height:2.7em;"></span
+                        ><span class="sizing reset-size6 size3 mtight"
+                          ><span class="mord mathdefault mtight">n</span></span
+                        ></span
+                      ></span
+                    ><span class="vlist-s">​</span></span
+                  ><span class="vlist-r"
+                    ><span class="vlist" style="height:0.15em;"
+                      ><span></span></span></span></span></span></span></span></span
+      ></span>
+      as a function of the previous terms in a sequence.
+    </p>
+    <table>
+      <tr>
+        <td><img src="./../Img/9.1.JPG" alt="9.1" /></td>
+        <td><img src="./../Img/9.2.JPG" alt="9.2" /></td>
+      </tr>
+    </table>
+
+    <p data-line="28" class="code-line">
+      Some recursive relations can depend on more than 1 previous terms. A famous example is the
+      <em>Fibonacci Sequence</em>.
+    </p>
+    <p data-line="30" class="code-line">
+      <strong>Fibonacci Sequence</strong><br />
+      <span class="katex"
+        ><span class="katex-mathml"
+          ><math
+            ><semantics
+              ><mrow
+                ><msub><mi>f</mi><mi>n</mi></msub
+                ><mo>=</mo
+                ><msub
+                  ><mi>f</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub
+                ><mo>+</mo
+                ><msub
+                  ><mi>f</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub
+                ></mrow
+              ><annotation encoding="application/x-tex"
+                >f_n = f_{n-1} + f_{n-2}</annotation
+              ></semantics
+            ></math
+          ></span
+        ><span class="katex-html" aria-hidden="true"
+          ><span class="base"
+            ><span
+              class="strut"
+              style="height:0.8888799999999999em;vertical-align:-0.19444em;"
+            ></span
+            ><span class="mord"
+              ><span class="mord mathdefault" style="margin-right:0.10764em;">f</span
+              ><span class="msupsub"
+                ><span class="vlist-t vlist-t2"
+                  ><span class="vlist-r"
+                    ><span class="vlist" style="height:0.151392em;"
+                      ><span
+                        style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"
+                        ><span class="pstrut" style="height:2.7em;"></span
+                        ><span class="sizing reset-size6 size3 mtight"
+                          ><span class="mord mathdefault mtight">n</span></span
+                        ></span
+                      ></span
+                    ><span class="vlist-s">​</span></span
+                  ><span class="vlist-r"
+                    ><span class="vlist" style="height:0.15em;"
+                      ><span></span></span></span></span></span></span
+            ><span class="mspace" style="margin-right:0.2777777777777778em;"></span
+            ><span class="mrel">=</span
+            ><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span
+          ><span class="base"
+            ><span class="strut" style="height:0.902771em;vertical-align:-0.208331em;"></span
+            ><span class="mord"
+              ><span class="mord mathdefault" style="margin-right:0.10764em;">f</span
+              ><span class="msupsub"
+                ><span class="vlist-t vlist-t2"
+                  ><span class="vlist-r"
+                    ><span class="vlist" style="height:0.301108em;"
+                      ><span
+                        style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"
+                        ><span class="pstrut" style="height:2.7em;"></span
+                        ><span class="sizing reset-size6 size3 mtight"
+                          ><span class="mord mtight"
+                            ><span class="mord mathdefault mtight">n</span
+                            ><span class="mbin mtight">−</span
+                            ><span class="mord mtight">1</span></span
+                          ></span
+                        ></span
+                      ></span
+                    ><span class="vlist-s">​</span></span
+                  ><span class="vlist-r"
+                    ><span class="vlist" style="height:0.208331em;"
+                      ><span></span></span></span></span></span></span
+            ><span class="mspace" style="margin-right:0.2222222222222222em;"></span
+            ><span class="mbin">+</span
+            ><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span
+          ><span class="base"
+            ><span class="strut" style="height:0.902771em;vertical-align:-0.208331em;"></span
+            ><span class="mord"
+              ><span class="mord mathdefault" style="margin-right:0.10764em;">f</span
+              ><span class="msupsub"
+                ><span class="vlist-t vlist-t2"
+                  ><span class="vlist-r"
+                    ><span class="vlist" style="height:0.301108em;"
+                      ><span
+                        style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"
+                        ><span class="pstrut" style="height:2.7em;"></span
+                        ><span class="sizing reset-size6 size3 mtight"
+                          ><span class="mord mtight"
+                            ><span class="mord mathdefault mtight">n</span
+                            ><span class="mbin mtight">−</span
+                            ><span class="mord mtight">2</span></span
+                          ></span
+                        ></span
+                      ></span
+                    ><span class="vlist-s">​</span></span
+                  ><span class="vlist-r"
+                    ><span class="vlist" style="height:0.208331em;"
+                      ><span></span></span></span></span></span></span></span></span></span
+      ><br />
+      when
+      <span class="katex"
+        ><span class="katex-mathml"
+          ><math
+            ><semantics
+              ><mrow
+                ><msub><mi>f</mi><mn>0</mn></msub
+                ><mo>=</mo><mn>0</mn></mrow
+              ><annotation encoding="application/x-tex">f_0 = 0</annotation></semantics
+            ></math
+          ></span
+        ><span class="katex-html" aria-hidden="true"
+          ><span class="base"
+            ><span
+              class="strut"
+              style="height:0.8888799999999999em;vertical-align:-0.19444em;"
+            ></span
+            ><span class="mord"
+              ><span class="mord mathdefault" style="margin-right:0.10764em;">f</span
+              ><span class="msupsub"
+                ><span class="vlist-t vlist-t2"
+                  ><span class="vlist-r"
+                    ><span class="vlist" style="height:0.30110799999999993em;"
+                      ><span
+                        style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"
+                        ><span class="pstrut" style="height:2.7em;"></span
+                        ><span class="sizing reset-size6 size3 mtight"
+                          ><span class="mord mtight">0</span></span
+                        ></span
+                      ></span
+                    ><span class="vlist-s">​</span></span
+                  ><span class="vlist-r"
+                    ><span class="vlist" style="height:0.15em;"
+                      ><span></span></span></span></span></span></span
+            ><span class="mspace" style="margin-right:0.2777777777777778em;"></span
+            ><span class="mrel">=</span
+            ><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span
+          ><span class="base"
+            ><span class="strut" style="height:0.64444em;vertical-align:0em;"></span
+            ><span class="mord">0</span></span
+          ></span
+        ></span
+      ><br />
+      &amp;
+      <span class="katex"
+        ><span class="katex-mathml"
+          ><math
+            ><semantics
+              ><mrow
+                ><msub><mi>f</mi><mn>1</mn></msub
+                ><mo>=</mo><mn>1</mn></mrow
+              ><annotation encoding="application/x-tex">f_1 = 1</annotation></semantics
+            ></math
+          ></span
+        ><span class="katex-html" aria-hidden="true"
+          ><span class="base"
+            ><span
+              class="strut"
+              style="height:0.8888799999999999em;vertical-align:-0.19444em;"
+            ></span
+            ><span class="mord"
+              ><span class="mord mathdefault" style="margin-right:0.10764em;">f</span
+              ><span class="msupsub"
+                ><span class="vlist-t vlist-t2"
+                  ><span class="vlist-r"
+                    ><span class="vlist" style="height:0.30110799999999993em;"
+                      ><span
+                        style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"
+                        ><span class="pstrut" style="height:2.7em;"></span
+                        ><span class="sizing reset-size6 size3 mtight"
+                          ><span class="mord mtight">1</span></span
+                        ></span
+                      ></span
+                    ><span class="vlist-s">​</span></span
+                  ><span class="vlist-r"
+                    ><span class="vlist" style="height:0.15em;"
+                      ><span></span></span></span></span></span></span
+            ><span class="mspace" style="margin-right:0.2777777777777778em;"></span
+            ><span class="mrel">=</span
+            ><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span
+          ><span class="base"
+            ><span class="strut" style="height:0.64444em;vertical-align:0em;"></span
+            ><span class="mord">1</span></span
+          ></span
+        ></span
+      >
+    </p>
+  </body>
+</html>

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css"
+      integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/texmath.css" />
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/vscode-texmath.css"
+    />
+  </head>
+  <body class="markdown-body">
+    <h1 id="module-7---fast-exponentiation-algorithms" data-line="5" class="code-line">
+      Module 7 - Fast Exponentiation Algorithms
+    </h1>
+    <h2 id="218---fast-exponentiation" data-line="7" class="code-line">
+      2.18 - Fast Exponentiation
+    </h2>
+    <p data-line="9" class="code-line">
+      (Fast exponentiation uses successive squaring of values rather than repeated multiplication)
+    </p>
+    <p data-line="11" class="code-line">
+      For a number
+      <eq
+        ><span class="katex"
+          ><span class="katex-mathml"
+            ><math
+              ><semantics
+                ><mrow><mi>b</mi></mrow
+                ><annotation encoding="application/x-tex">b</annotation></semantics
+              ></math
+            ></span
+          ><span class="katex-html" aria-hidden="true"
+            ><span class="base"
+              ><span class="strut" style="height:0.69444em;vertical-align:0em;"></span
+              ><span class="mord mathdefault">b</span></span
+            ></span
+          ></span
+        ></eq
+      >
+      being raised to exponent
+      <eq
+        ><span class="katex"
+          ><span class="katex-mathml"
+            ><math
+              ><semantics
+                ><mrow><mi>x</mi></mrow
+                ><annotation encoding="application/x-tex">x</annotation></semantics
+              ></math
+            ></span
+          ><span class="katex-html" aria-hidden="true"
+            ><span class="base"
+              ><span class="strut" style="height:0.43056em;vertical-align:0em;"></span
+              ><span class="mord mathdefault">x</span></span
+            ></span
+          ></span
+        ></eq
+      >
+      (so
+      <span class="katex"
+        ><span class="katex-mathml"
+          ><math
+            ><semantics
+              ><mrow
+                ><msup><mi>b</mi><mi>x</mi></msup></mrow
+              ><annotation encoding="application/x-tex">b^x</annotation></semantics
+            ></math
+          ></span
+        ><span class="katex-html" aria-hidden="true"
+          ><span class="base"
+            ><span class="strut" style="height:0.69444em;vertical-align:0em;"></span
+            ><span class="mord"
+              ><span class="mord mathdefault">b</span
+              ><span class="msupsub"
+                ><span class="vlist-t"
+                  ><span class="vlist-r"
+                    ><span class="vlist" style="height:0.664392em;"
+                      ><span style="top:-3.063em;margin-right:0.05em;"
+                        ><span class="pstrut" style="height:2.7em;"></span
+                        ><span class="sizing reset-size6 size3 mtight"
+                          ><span class="mord mathdefault mtight">x</span></span
+                        ></span
+                      ></span
+                    ></span
+                  ></span
+                ></span
+              ></span
+            ></span
+          ></span
+        ></span
+      >), instead of multiplying b x times, instead follow these steps:
+    </p>
+    <ol>
+      <li data-line="13" class="code-line">
+        Convert x into binary. (example:
+        <span class="katex"
+          ><span class="katex-mathml"
+            ><math
+              ><semantics
+                ><mrow
+                  ><msup><mn>5</mn><mn>7</mn></msup></mrow
+                ><annotation encoding="application/x-tex">5^7</annotation></semantics
+              ></math
+            ></span
+          ><span class="katex-html" aria-hidden="true"
+            ><span class="base"
+              ><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span
+              ><span class="mord"
+                ><span class="mord">5</span
+                ><span class="msupsub"
+                  ><span class="vlist-t"
+                    ><span class="vlist-r"
+                      ><span class="vlist" style="height:0.8141079999999999em;"
+                        ><span style="top:-3.063em;margin-right:0.05em;"
+                          ><span class="pstrut" style="height:2.7em;"></span
+                          ><span class="sizing reset-size6 size3 mtight"
+                            ><span class="mord mtight">7</span></span
+                          ></span
+                        ></span
+                      ></span
+                    ></span
+                  ></span
+                ></span
+              ></span
+            ></span
+          ></span
+        >
+        becomes
+        <span class="katex"
+          ><span class="katex-mathml"
+            ><math
+              ><semantics
+                ><mrow
+                  ><msup
+                    ><mn>5</mn
+                    ><mrow
+                      ><mo>(</mo><mn>111</mn><msub><mo>)</mo><mn>2</mn></msub></mrow
+                    ></msup
+                  ></mrow
+                ><annotation encoding="application/x-tex">5^{(111)_2}</annotation></semantics
+              ></math
+            ></span
+          ><span class="katex-html" aria-hidden="true"
+            ><span class="base"
+              ><span class="strut" style="height:0.8879999999999999em;vertical-align:0em;"></span
+              ><span class="mord"
+                ><span class="mord">5</span
+                ><span class="msupsub"
+                  ><span class="vlist-t"
+                    ><span class="vlist-r"
+                      ><span class="vlist" style="height:0.8879999999999999em;"
+                        ><span style="top:-3.063em;margin-right:0.05em;"
+                          ><span class="pstrut" style="height:2.7em;"></span
+                          ><span class="sizing reset-size6 size3 mtight"
+                            ><span class="mord mtight"
+                              ><span class="mopen mtight">(</span><span class="mord mtight">1</span
+                              ><span class="mord mtight">1</span><span class="mord mtight">1</span
+                              ><span class="mclose mtight"
+                                ><span class="mclose mtight">)</span
+                                ><span class="msupsub"
+                                  ><span class="vlist-t vlist-t2"
+                                    ><span class="vlist-r"
+                                      ><span class="vlist" style="height:0.31731428571428577em;"
+                                        ><span
+                                          style="top:-2.357em;margin-left:0em;margin-right:0.07142857142857144em;"
+                                          ><span class="pstrut" style="height:2.5em;"></span
+                                          ><span class="sizing reset-size3 size1 mtight"
+                                            ><span class="mord mtight">2</span></span
+                                          ></span
+                                        ></span
+                                      ><span class="vlist-s">​</span></span
+                                    ><span class="vlist-r"
+                                      ><span class="vlist" style="height:0.143em;"
+                                        ><span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span
+        >)
+      </li>
+      <li data-line="14" class="code-line">
+        For each &quot;1&quot; in that binary number, convert it into form
+        <span class="katex"
+          ><span class="katex-mathml"
+            ><math
+              ><semantics
+                ><mrow
+                  ><msup><mn>2</mn><mi>x</mi></msup></mrow
+                ><annotation encoding="application/x-tex">2^x</annotation></semantics
+              ></math
+            ></span
+          ><span class="katex-html" aria-hidden="true"
+            ><span class="base"
+              ><span class="strut" style="height:0.664392em;vertical-align:0em;"></span
+              ><span class="mord"
+                ><span class="mord">2</span
+                ><span class="msupsub"
+                  ><span class="vlist-t"
+                    ><span class="vlist-r"
+                      ><span class="vlist" style="height:0.664392em;"
+                        ><span style="top:-3.063em;margin-right:0.05em;"
+                          ><span class="pstrut" style="height:2.7em;"></span
+                          ><span class="sizing reset-size6 size3 mtight"
+                            ><span class="mord mathdefault mtight">x</span></span
+                          ></span
+                        ></span
+                      ></span
+                    ></span
+                  ></span
+                ></span
+              ></span
+            ></span
+          ></span
+        >, where x is the placement in the number. (example, 7=
+        <span class="katex"
+          ><span class="katex-mathml"
+            ><math
+              ><semantics
+                ><mrow
+                  ><msup><mn>2</mn><mn>2</mn></msup></mrow
+                ><annotation encoding="application/x-tex">2^2</annotation></semantics
+              ></math
+            ></span
+          ><span class="katex-html" aria-hidden="true"
+            ><span class="base"
+              ><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span
+              ><span class="mord"
+                ><span class="mord">2</span
+                ><span class="msupsub"
+                  ><span class="vlist-t"
+                    ><span class="vlist-r"
+                      ><span class="vlist" style="height:0.8141079999999999em;"
+                        ><span style="top:-3.063em;margin-right:0.05em;"
+                          ><span class="pstrut" style="height:2.7em;"></span
+                          ><span class="sizing reset-size6 size3 mtight"
+                            ><span class="mord mtight">2</span></span
+                          ></span
+                        ></span
+                      ></span
+                    ></span
+                  ></span
+                ></span
+              ></span
+            ></span
+          ></span
+        >,
+        <span class="katex"
+          ><span class="katex-mathml"
+            ><math
+              ><semantics
+                ><mrow
+                  ><msup><mn>2</mn><mn>1</mn></msup></mrow
+                ><annotation encoding="application/x-tex">2^1</annotation></semantics
+              ></math
+            ></span
+          ><span class="katex-html" aria-hidden="true"
+            ><span class="base"
+              ><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span
+              ><span class="mord"
+                ><span class="mord">2</span
+                ><span class="msupsub"
+                  ><span class="vlist-t"
+                    ><span class="vlist-r"
+                      ><span class="vlist" style="height:0.8141079999999999em;"
+                        ><span style="top:-3.063em;margin-right:0.05em;"
+                          ><span class="pstrut" style="height:2.7em;"></span
+                          ><span class="sizing reset-size6 size3 mtight"
+                            ><span class="mord mtight">1</span></span
+                          ></span
+                        ></span
+                      ></span
+                    ></span
+                  ></span
+                ></span
+              ></span
+            ></span
+          ></span
+        >,
+        <span class="katex"
+          ><span class="katex-mathml"
+            ><math
+              ><semantics
+                ><mrow
+                  ><msup><mn>2</mn><mn>0</mn></msup></mrow
+                ><annotation encoding="application/x-tex">2^0</annotation></semantics
+              ></math
+            ></span
+          ><span class="katex-html" aria-hidden="true"
+            ><span class="base"
+              ><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span
+              ><span class="mord"
+                ><span class="mord">2</span
+                ><span class="msupsub"
+                  ><span class="vlist-t"
+                    ><span class="vlist-r"
+                      ><span class="vlist" style="height:0.8141079999999999em;"
+                        ><span style="top:-3.063em;margin-right:0.05em;"
+                          ><span class="pstrut" style="height:2.7em;"></span
+                          ><span class="sizing reset-size6 size3 mtight"
+                            ><span class="mord mtight">0</span></span
+                          ></span
+                        ></span
+                      ></span
+                    ></span
+                  ></span
+                ></span
+              ></span
+            ></span
+          ></span
+        >)
+      </li>
+      <li data-line="15" class="code-line">
+        Raise
+        <eq
+          ><span class="katex"
+            ><span class="katex-mathml"
+              ><math
+                ><semantics
+                  ><mrow><mi>b</mi></mrow
+                  ><annotation encoding="application/x-tex">b</annotation></semantics
+                ></math
+              ></span
+            ><span class="katex-html" aria-hidden="true"
+              ><span class="base"
+                ><span class="strut" style="height:0.69444em;vertical-align:0em;"></span
+                ><span class="mord mathdefault">b</span></span
+              ></span
+            ></span
+          ></eq
+        >
+        to each of those exponents found in step 2. (Example:
+        <span class="katex"
+          ><span class="katex-mathml"
+            ><math
+              ><semantics
+                ><mrow
+                  ><msup
+                    ><mn>5</mn><msup><mn>2</mn><mn>2</mn></msup></msup
+                  ><mo>∗</mo
+                  ><msup
+                    ><mn>5</mn><msup><mn>2</mn><mn>1</mn></msup></msup
+                  ><mo>∗</mo
+                  ><msup
+                    ><mn>5</mn><msup><mn>2</mn><mn>0</mn></msup></msup
+                  ></mrow
+                ><annotation encoding="application/x-tex"
+                  >5^{2^2} * 5^{2^1} * 5^{2^0}</annotation
+                ></semantics
+              ></math
+            ></span
+          ><span class="katex-html" aria-hidden="true"
+            ><span class="base"
+              ><span class="strut" style="height:0.9869199999999999em;vertical-align:0em;"></span
+              ><span class="mord"
+                ><span class="mord">5</span
+                ><span class="msupsub"
+                  ><span class="vlist-t"
+                    ><span class="vlist-r"
+                      ><span class="vlist" style="height:0.9869199999999999em;"
+                        ><span style="top:-3.063em;margin-right:0.05em;"
+                          ><span class="pstrut" style="height:2.7em;"></span
+                          ><span class="sizing reset-size6 size3 mtight"
+                            ><span class="mord mtight"
+                              ><span class="mord mtight"
+                                ><span class="mord mtight">2</span
+                                ><span class="msupsub"
+                                  ><span class="vlist-t"
+                                    ><span class="vlist-r"
+                                      ><span class="vlist" style="height:0.8913142857142857em;"
+                                        ><span
+                                          style="top:-2.931em;margin-right:0.07142857142857144em;"
+                                          ><span class="pstrut" style="height:2.5em;"></span
+                                          ><span class="sizing reset-size3 size1 mtight"
+                                            ><span class="mord mtight">2</span></span
+                                          ></span
+                                        ></span
+                                      ></span
+                                    ></span
+                                  ></span
+                                ></span
+                              ></span
+                            ></span
+                          ></span
+                        ></span
+                      ></span
+                    ></span
+                  ></span
+                ></span
+              ><span class="mspace" style="margin-right:0.2222222222222222em;"></span
+              ><span class="mbin">∗</span
+              ><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span
+            ><span class="base"
+              ><span class="strut" style="height:0.9869199999999999em;vertical-align:0em;"></span
+              ><span class="mord"
+                ><span class="mord">5</span
+                ><span class="msupsub"
+                  ><span class="vlist-t"
+                    ><span class="vlist-r"
+                      ><span class="vlist" style="height:0.9869199999999999em;"
+                        ><span style="top:-3.063em;margin-right:0.05em;"
+                          ><span class="pstrut" style="height:2.7em;"></span
+                          ><span class="sizing reset-size6 size3 mtight"
+                            ><span class="mord mtight"
+                              ><span class="mord mtight"
+                                ><span class="mord mtight">2</span
+                                ><span class="msupsub"
+                                  ><span class="vlist-t"
+                                    ><span class="vlist-r"
+                                      ><span class="vlist" style="height:0.8913142857142857em;"
+                                        ><span
+                                          style="top:-2.931em;margin-right:0.07142857142857144em;"
+                                          ><span class="pstrut" style="height:2.5em;"></span
+                                          ><span class="sizing reset-size3 size1 mtight"
+                                            ><span class="mord mtight">1</span></span
+                                          ></span
+                                        ></span
+                                      ></span
+                                    ></span
+                                  ></span
+                                ></span
+                              ></span
+                            ></span
+                          ></span
+                        ></span
+                      ></span
+                    ></span
+                  ></span
+                ></span
+              ><span class="mspace" style="margin-right:0.2222222222222222em;"></span
+              ><span class="mbin">∗</span
+              ><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span
+            ><span class="base"
+              ><span class="strut" style="height:0.9869199999999999em;vertical-align:0em;"></span
+              ><span class="mord"
+                ><span class="mord">5</span
+                ><span class="msupsub"
+                  ><span class="vlist-t"
+                    ><span class="vlist-r"
+                      ><span class="vlist" style="height:0.9869199999999999em;"
+                        ><span style="top:-3.063em;margin-right:0.05em;"
+                          ><span class="pstrut" style="height:2.7em;"></span
+                          ><span class="sizing reset-size6 size3 mtight"
+                            ><span class="mord mtight"
+                              ><span class="mord mtight"
+                                ><span class="mord mtight">2</span
+                                ><span class="msupsub"
+                                  ><span class="vlist-t"
+                                    ><span class="vlist-r"
+                                      ><span class="vlist" style="height:0.8913142857142857em;"
+                                        ><span
+                                          style="top:-2.931em;margin-right:0.07142857142857144em;"
+                                          ><span class="pstrut" style="height:2.5em;"></span
+                                          ><span class="sizing reset-size3 size1 mtight"
+                                            ><span class="mord mtight">0</span></span
+                                          ></span
+                                        ></span
+                                      ></span
+                                    ></span
+                                  ></span
+                                ></span
+                              ></span
+                            ></span
+                          ></span
+                        ></span
+                      ></span
+                    ></span
+                  ></span
+                ></span
+              ></span
+            ></span
+          ></span
+        >)
+      </li>
+    </ol>
+    <p data-line="17" class="code-line">
+      That makes for a faster method to find exponents for large numbers.
+    </p>
+    <p data-line="19" class="code-line">
+      <img
+        src="./../Img/7.1.JPG"
+        alt="7.1"
+        class="loading"
+        id="image-hash-8e96cfd09cc6d103529b5a344320c50093d49211753bbeef7f7463f5e3a0c987"
+      />
+    </p>
+    <hr />
+    <h2 id="219---modular-exponentiation" data-line="23" class="code-line">
+      2.19 - Modular Exponentiation
+    </h2>
+    <p data-line="25" class="code-line">
+      A faster version of the method in section 2.18 exists using modular arithmetic.
+    </p>
+    <p data-line="27" class="code-line">
+      <img
+        src="./../Img/7.2.JPG"
+        alt="7.2"
+        class="loading"
+        id="image-hash-c8b1983fdfb9a5993628facac9b35519a497ea3b36691ea769ba1c6bf8e055e3"
+      />
+    </p>
+  </body>
+</html>

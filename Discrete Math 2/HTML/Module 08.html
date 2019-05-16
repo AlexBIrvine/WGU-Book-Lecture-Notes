@@ -1,0 +1,55 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js">
+<link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+<link rel="stylesheet" href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/texmath.css">
+<link rel="stylesheet" href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/vscode-texmath.css">
+
+</head><body class="markdown-body">
+
+<h1 id="module-8---mathematical-foundations-of-encryption" data-line="5" class="code-line">Module 8 - Mathematical Foundations of Encryption</h1>
+<h2 id="221---introduction-to-cryptography" data-line="7" class="code-line">2.21 - Introduction to Cryptography</h2>
+<p data-line="9" class="code-line">Important terms:</p>
+<p data-line="11" class="code-line"><strong>Encrypt</strong>: the process of transforming information or data into a code to prevent unauthorized access.<br>
+<strong>Decrypt</strong>: the process of transforming data that has been rendered unreadable through encryption back to its unencrypted form.<br>
+<strong>Cyphertext</strong>: an encrypted message.<br>
+<strong>Plaintext</strong>: an unencrypted message.<br>
+<strong>Key</strong>: an unpredictable (typically large and random) string of numbers to decrypt an encrypted message.</p>
+<hr>
+<h2 id="222---encryption-and-decryption" data-line="19" class="code-line">2.22 - Encryption and Decryption</h2>
+<p data-line="21" class="code-line"><strong>Symmetric Key Cryptosystem</strong> - Uses the same key to decrypt and encrypt the message.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>Encrypt</strong></th>
+<th style="text-align:center"><strong>Decrypt</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mo>=</mo><mo>(</mo><mi>m</mi><mo>+</mo><mi>k</mi><mo>)</mo><mspace></mspace><mspace width="0.6666666666666666em"/><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi></mrow><mtext>&ThinSpace;</mtext><mtext>&ThinSpace;</mtext><mi>N</mi></mrow><annotation encoding="application/x-tex">c = (m + k) \mod N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">)</span><span class="mspace allowbreak"></span><span class="mspace" style="margin-right:0.6666666666666666em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">m</span><span class="mord mathrm">o</span><span class="mord mathrm">d</span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span></span></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>=</mo><mo>(</mo><mi>c</mi><mo>−</mo><mi>k</mi><mo>)</mo><mspace></mspace><mspace width="0.6666666666666666em"/><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi></mrow><mtext>&ThinSpace;</mtext><mtext>&ThinSpace;</mtext><mi>N</mi></mrow><annotation encoding="application/x-tex">m = (c - k) \mod N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">c</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">)</span><span class="mspace allowbreak"></span><span class="mspace" style="margin-right:0.6666666666666666em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">m</span><span class="mord mathrm">o</span><span class="mord mathrm">d</span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span></span></td>
+</tr>
+<tr>
+<td style="text-align:center">m = message<br>k = key 1<br>N = key 2<br>c = cyphertext</td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="223---rsa-encryption" data-line="30" class="code-line">2.23 - RSA Encryption</h2>
+<p data-line="32" class="code-line">RSA encryption uses a public key for encryption and a private key for decryption. It's based on very large numbers (hundreds of digits)</p>
+<p data-line="34" class="code-line"><strong>Preparation of public and private keys in RSA</strong></p>
+<ol>
+<li data-line="36" class="code-line">Bob selects two large prime numbers, p and q</li>
+<li data-line="37" class="code-line">Bob computes N = pq and φ = (p-1)(q-1)</li>
+<li data-line="38" class="code-line">Bob finds an integer e such that gcd(e, φ) = 1</li>
+<li data-line="39" class="code-line">Bob computes the multiplicative inverse of e mod φ: an integer d such that (ed mod φ) = 1</li>
+<li data-line="40" class="code-line">Public (encryption) key: N and e</li>
+<li data-line="41" class="code-line">Private (decryption) key: d</li>
+</ol>
+<p data-line="43" class="code-line"><img src="./../Img/7.3.JPG" alt="7.3" class="loading" id="image-hash-f17b5369476f81b93bb74ffbd7aed014afe1147427aff20d507b46c718d00669"></p>
+<h2 id="224---rsa-decryption" data-line="45" class="code-line">2.24 - RSA Decryption</h2>
+<p data-line="47" class="code-line"><img src="./../Img/7.4.JPG" alt="7.4" class="loading" id="image-hash-1f91b96b9d87cd185ad676942024c978bda15e612ae5370e83662467f94cc730"></p>
+
+</body></html>

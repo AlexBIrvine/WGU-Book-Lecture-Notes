@@ -1,0 +1,39 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js">
+<link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+<link rel="stylesheet" href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/texmath.css">
+<link rel="stylesheet" href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/vscode-texmath.css">
+
+</head><body class="markdown-body">
+
+<h1 id="module-16---generating-permutations-and-combinations" data-line="5" class="code-line">Module 16 - Generating Permutations and Combinations</h1>
+<h2 id="415---generating-permutations-and-combinations" data-line="7" class="code-line">4.15 -  Generating permutations and combinations</h2>
+<p data-line="9" class="code-line"><strong>Lexicographic order</strong> - Compares two tuples and how they differ, which one will be larger than the other.<br>
+This follows the same rules as alphabetical order in grade school.  For (1,2,3,5) and (1,2,6,1), the second one is larger because where they differ (index 3, or 3 &amp; 6) it's larger.<br>
+This only works for <em>sequences</em> and <em>tuples</em> where the order matters.</p>
+<p data-line="13" class="code-line"><strong>Algorithm to generate permutations in lexicographic order</strong></p>
+<pre><code data-line="14" class="code-line"><code><div>GenLexPermutations(n)
+
+Initialize P = (1, 2, …, n - 1, n)
+Output P
+While P ≠ (n, n - 1, …, 2, 1),
+    P = NextPerm(P)
+    Output P
+</div></code></code></pre>
+<p data-line="24" class="code-line">(4.15.4: Finding the next permutation in lexicographic order.  &lt;- is very helpful)</p>
+<hr>
+<h2 id="416---generating-r-subsets-of-a-set" data-line="28" class="code-line">4.16 - Generating r-subsets of a set</h2>
+<p data-line="30" class="code-line">Where the order doesn't matter, you first sort the set in increasing order to compare them.<br>
+So {3,2,4} &gt; {5,1,3} because sorted they become {2,3,4} &gt; {1,3,5}</p>
+<p data-line="33" class="code-line"><strong>Algorithm to generate r-subsets in lexicographic order</strong></p>
+<pre><code data-line="34" class="code-line"><code><div>GenLexSubsets(r, n)
+
+Initialize S = {1, 2, …, r-1, r}
+Output P
+While S ≠ {n-r+1, …, n-1, n},
+    S = NextSubset(n, S)
+    Output S
+</div></code></code></pre>
+
+</body></html>

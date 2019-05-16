@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css"
+      integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/texmath.css" />
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/vscode-texmath.css"
+    />
+  </head>
+  <body class="markdown-body">
+    <h1 id="module-21---deterministic-finite-state-machine" data-line="5" class="code-line">
+      Module 21 - Deterministic Finite State Machine
+    </h1>
+    <h2 id="63---theory-of-computation" data-line="7" class="code-line">
+      6.3 - Theory of computation
+    </h2>
+    <p data-line="9" class="code-line">
+      <strong>Computation</strong> - Any type of calculation that follows steps that provide a
+      solution to a problem.
+    </p>
+    <p data-line="11" class="code-line"><strong>4 Major Families of Automata</strong></p>
+    <ol>
+      <li data-line="13" class="code-line">
+        <strong>Finite State Machine</strong> - Every bit exists as either a 0 or 1, and a finite
+        possibility of inputs exist.
+      </li>
+      <li data-line="14" class="code-line">
+        <strong>Pushdown Automaton</strong> - Uses a stack/collection that collects elements.
+      </li>
+      <li data-line="15" class="code-line">
+        <strong>Linear-bounded Automation</strong> - Two end markers with input in between.
+      </li>
+      <li data-line="16" class="code-line">
+        <strong>Turing Machine</strong> - A finite state machine with infinite storage.
+      </li>
+    </ol>
+    <p data-line="18" class="code-line">
+      <strong>Grammar</strong> - A set of rules for generating strings.
+    </p>
+    <hr />
+    <h2 id="64---deterministic-finite-state-automata-dfa" data-line="22" class="code-line">
+      6.4 - Deterministic finite state automata (DFA)
+    </h2>
+    <p data-line="24" class="code-line">
+      A deterministic finite state machine is a machine who's outcomes are predetermined and
+      dependent on the input.<br />
+      For example, a subway turnstile. It starts locked, and accepts either a push or a coin. If it
+      gets a coin, it unlocks (and therefore can be pushed).<br />
+      If it's pushed while unlocked, it turns then locks.
+    </p>
+    <p data-line="28" class="code-line">
+      DFA components: <strong>Alphabet</strong> - The finite amount of input strings.<br />
+      <strong>Transistion Function</strong> - The set of rules that determine the output. Based on
+      current state and next input string.<br />
+      <strong>Start State</strong> - The state of which processing strings begins.
+    </p>
+    <p data-line="33" class="code-line">
+      <img
+        src="./../Img/21.1.JPG"
+        alt="21.1"
+        class="loading"
+        id="image-hash-945f0734aea3d1466a1c32e09423c0e85678e3db65fb532fdb75e55450a627f3"
+      />
+    </p>
+    <hr />
+    <h2 id="65---dfa-state-diagrams" data-line="37" class="code-line">6.5 - DFA state diagrams</h2>
+    <p data-line="39" class="code-line">(Below is a visualization of the DFA state)</p>
+    <p data-line="41" class="code-line">
+      <img
+        src="./../Img/21.2.JPG"
+        alt="21.2"
+        class="loading"
+        id="image-hash-3cc8450f37031efb512099032de44e10719ad724bdb7720cb95da0b091e2fb32"
+      />
+    </p>
+    <hr />
+    <h2 id="66---dfa-state-transition-tables" data-line="45" class="code-line">
+      6.6 - DFA state transition tables
+    </h2>
+    <p data-line="47" class="code-line">
+      A table can be used to represent the transition between states.<br />
+      The columns will be the input, the rows being the current state.<br />
+      The cells will be the output (given the current state and input)
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align:center"></th>
+          <th style="text-align:center">COIN</th>
+          <th style="text-align:center">PUSH</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align:center"><strong>LOCKED</strong></td>
+          <td style="text-align:center">UNLOCKED</td>
+          <td style="text-align:center">LOCKED</td>
+        </tr>
+        <tr>
+          <td style="text-align:center"><strong>UNLOCKED</strong></td>
+          <td style="text-align:center">UNLOCKED</td>
+          <td style="text-align:center">LOCKED</td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <h2 id="67---dfa-analyzing-transition-rules" data-line="58" class="code-line">
+      6.7 - DFA analyzing transition rules
+    </h2>
+    <p data-line="60" class="code-line">(Examples &amp; exercises of the three sections above)</p>
+    <hr />
+    <h2 id="68---dfa-evaluating-outcomes" data-line="64" class="code-line">
+      6.8 - DFA evaluating outcomes
+    </h2>
+    <p data-line="66" class="code-line">
+      Some finite state machines can have &quot;accepting&quot; values, meaning that the output is
+      &quot;true&quot; if it ends in a certain state.<br />
+      On a diagram, this is represented by a double circle around the state.
+    </p>
+  </body>
+</html>

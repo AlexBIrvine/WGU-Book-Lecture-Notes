@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css"
+      integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/texmath.css" />
+    <link
+      rel="stylesheet"
+      href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/vscode-texmath.css"
+    />
+  </head>
+  <body class="markdown-body">
+    <h1 id="module-19---conditional-probability-and-bayes-theorem" data-line="5" class="code-line">
+      Module 19 - Conditional Probability and Bayes' Theorem
+    </h1>
+    <h2 id="58---conditional-probability" data-line="7" class="code-line">
+      5.8 - Conditional probability
+    </h2>
+    <p data-line="9" class="code-line">
+      The probability of an event E happening in sample space S is known. Then an event F happens.
+      This is how you find out what the likelyhood of E is AFTER F has happened.
+    </p>
+    <p data-line="11" class="code-line">
+      For example: Say you are rolling dice and want to know the likely hood that the total is at
+      least 10 (event E). That set is {(4,6), (6,4) (5,5), (5,6), (6,5), (6,6)}.<br />
+      You roll the first die and it comes up 5 (event F). Now what is the likelyhood that the total
+      is at least 10?<br />
+      Event F is the likleyhood that the roll came up 5, so 1/6.
+    </p>
+    <p data-line="15" class="code-line">
+      To find the <strong>Conditional Probability</strong> of this event, use the following formula:
+    </p>
+    <p>
+      <span class="katex-display"
+        ><span class="katex"
+          ><span class="katex-mathml"
+            ><math
+              ><semantics
+                ><mrow
+                  ><mi>p</mi><mo>(</mo><mi>E</mi><mi mathvariant="normal">∣</mi><mi>F</mi><mo>)</mo
+                  ><mo>=</mo
+                  ><mfrac
+                    ><mrow><mi>p</mi><mo>(</mo><mi>E</mi><mo>∩</mo><mi>F</mi><mo>)</mo></mrow
+                    ><mrow><mi>p</mi><mo>(</mo><mi>F</mi><mo>)</mo></mrow></mfrac
+                  ></mrow
+                ><annotation encoding="application/x-tex"
+                  >p(E|F) = \frac{p(E \cap F)}{p(F)}</annotation
+                ></semantics
+              ></math
+            ></span
+          ><span class="katex-html" aria-hidden="true"
+            ><span class="base"
+              ><span class="strut" style="height:1em;vertical-align:-0.25em;"></span
+              ><span class="mord mathdefault">p</span><span class="mopen">(</span
+              ><span class="mord mathdefault" style="margin-right:0.05764em;">E</span
+              ><span class="mord">∣</span
+              ><span class="mord mathdefault" style="margin-right:0.13889em;">F</span
+              ><span class="mclose">)</span
+              ><span class="mspace" style="margin-right:0.2777777777777778em;"></span
+              ><span class="mrel">=</span
+              ><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span
+            ><span class="base"
+              ><span class="strut" style="height:2.363em;vertical-align:-0.936em;"></span
+              ><span class="mord"
+                ><span class="mopen nulldelimiter"></span
+                ><span class="mfrac"
+                  ><span class="vlist-t vlist-t2"
+                    ><span class="vlist-r"
+                      ><span class="vlist" style="height:1.427em;"
+                        ><span style="top:-2.314em;"
+                          ><span class="pstrut" style="height:3em;"></span
+                          ><span class="mord"
+                            ><span class="mord mathdefault">p</span><span class="mopen">(</span
+                            ><span class="mord mathdefault" style="margin-right:0.13889em;">F</span
+                            ><span class="mclose">)</span></span
+                          ></span
+                        ><span style="top:-3.23em;"
+                          ><span class="pstrut" style="height:3em;"></span
+                          ><span class="frac-line" style="border-bottom-width:0.04em;"></span></span
+                        ><span style="top:-3.677em;"
+                          ><span class="pstrut" style="height:3em;"></span
+                          ><span class="mord"
+                            ><span class="mord mathdefault">p</span><span class="mopen">(</span
+                            ><span class="mord mathdefault" style="margin-right:0.05764em;">E</span
+                            ><span class="mspace" style="margin-right:0.2222222222222222em;"></span
+                            ><span class="mbin">∩</span
+                            ><span class="mspace" style="margin-right:0.2222222222222222em;"></span
+                            ><span class="mord mathdefault" style="margin-right:0.13889em;">F</span
+                            ><span class="mclose">)</span></span
+                          ></span
+                        ></span
+                      ><span class="vlist-s">​</span></span
+                    ><span class="vlist-r"
+                      ><span class="vlist" style="height:0.936em;"
+                        ><span></span></span></span></span></span
+                ><span class="mclose nulldelimiter"></span></span></span></span></span
+      ></span>
+    </p>
+    <p data-line="19" class="code-line">
+      So we know
+      <span class="katex"
+        ><span class="katex-mathml"
+          ><math
+            ><semantics
+              ><mrow
+                ><mi mathvariant="normal">∣</mi><mi>E</mi><mi mathvariant="normal">∣</mi><mo>=</mo
+                ><mn>6</mn></mrow
+              ><annotation encoding="application/x-tex">|E| = 6</annotation></semantics
+            ></math
+          ></span
+        ><span class="katex-html" aria-hidden="true"
+          ><span class="base"
+            ><span class="strut" style="height:1em;vertical-align:-0.25em;"></span
+            ><span class="mord">∣</span
+            ><span class="mord mathdefault" style="margin-right:0.05764em;">E</span
+            ><span class="mord">∣</span
+            ><span class="mspace" style="margin-right:0.2777777777777778em;"></span
+            ><span class="mrel">=</span
+            ><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span
+          ><span class="base"
+            ><span class="strut" style="height:0.64444em;vertical-align:0em;"></span
+            ><span class="mord">6</span></span
+          ></span
+        ></span
+      >
+      and
+      <span class="katex"
+        ><span class="katex-mathml"
+          ><math
+            ><semantics
+              ><mrow
+                ><mi mathvariant="normal">∣</mi><mi>F</mi><mi mathvariant="normal">∣</mi><mo>=</mo
+                ><mn>6</mn></mrow
+              ><annotation encoding="application/x-tex">|F| = 6</annotation></semantics
+            ></math
+          ></span
+        ><span class="katex-html" aria-hidden="true"
+          ><span class="base"
+            ><span class="strut" style="height:1em;vertical-align:-0.25em;"></span
+            ><span class="mord">∣</span
+            ><span class="mord mathdefault" style="margin-right:0.13889em;">F</span
+            ><span class="mord">∣</span
+            ><span class="mspace" style="margin-right:0.2777777777777778em;"></span
+            ><span class="mrel">=</span
+            ><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span
+          ><span class="base"
+            ><span class="strut" style="height:0.64444em;vertical-align:0em;"></span
+            ><span class="mord">6</span></span
+          ></span
+        ></span
+      >
+      .
+      <span class="katex"
+        ><span class="katex-mathml"
+          ><math
+            ><semantics
+              ><mrow
+                ><mi mathvariant="normal">∣</mi><mi>E</mi><mo>∩</mo><mi>F</mi
+                ><mi mathvariant="normal">∣</mi><mo>=</mo><mn>2</mn></mrow
+              ><annotation encoding="application/x-tex">|E \cap F| = 2</annotation></semantics
+            ></math
+          ></span
+        ><span class="katex-html" aria-hidden="true"
+          ><span class="base"
+            ><span class="strut" style="height:1em;vertical-align:-0.25em;"></span
+            ><span class="mord">∣</span
+            ><span class="mord mathdefault" style="margin-right:0.05764em;">E</span
+            ><span class="mspace" style="margin-right:0.2222222222222222em;"></span
+            ><span class="mbin">∩</span
+            ><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span
+          ><span class="base"
+            ><span class="strut" style="height:1em;vertical-align:-0.25em;"></span
+            ><span class="mord mathdefault" style="margin-right:0.13889em;">F</span
+            ><span class="mord">∣</span
+            ><span class="mspace" style="margin-right:0.2777777777777778em;"></span
+            ><span class="mrel">=</span
+            ><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span
+          ><span class="base"
+            ><span class="strut" style="height:0.64444em;vertical-align:0em;"></span
+            ><span class="mord">2</span></span
+          ></span
+        ></span
+      ><br />
+      <span class="katex"
+        ><span class="katex-mathml"
+          ><math
+            ><semantics
+              ><mrow
+                ><mn>2</mn><mi mathvariant="normal">/</mi><mn>6</mn><mo>=</mo><mn>1</mn
+                ><mi mathvariant="normal">/</mi><mn>3</mn></mrow
+              ><annotation encoding="application/x-tex">2/6 = 1/3</annotation></semantics
+            ></math
+          ></span
+        ><span class="katex-html" aria-hidden="true"
+          ><span class="base"
+            ><span class="strut" style="height:1em;vertical-align:-0.25em;"></span
+            ><span class="mord">2</span><span class="mord">/</span><span class="mord">6</span
+            ><span class="mspace" style="margin-right:0.2777777777777778em;"></span
+            ><span class="mrel">=</span
+            ><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span
+          ><span class="base"
+            ><span class="strut" style="height:1em;vertical-align:-0.25em;"></span
+            ><span class="mord">1</span><span class="mord">/</span><span class="mord">3</span></span
+          ></span
+        ></span
+      >
+    </p>
+    <hr />
+    <h2 id="59---independent-vs-dependent-events" data-line="24" class="code-line">
+      5.9 - Independent vs. dependent events
+    </h2>
+    <p data-line="26" class="code-line">
+      Two events are <strong>independent</strong> if conditioning on one event does not change the
+      probability of the other event.<br />
+      <img
+        src="./../Img/19.1.JPG"
+        alt="19.1"
+        class="loading"
+        id="image-hash-ec453b68a9b62c60f3e43d38a5fae8e798d13e730219f7d369cb563e91165ddd"
+      />
+    </p>
+
+    <hr />
+    <h2 id="510---bayes-theorem" data-line="31" class="code-line">5.10 - Bayes' Theorem</h2>
+    <p data-line="33" class="code-line">
+      <img
+        src="./../Img/19.2.JPG"
+        alt="19.2"
+        class="loading"
+        id="image-hash-1abb56295b355c358aef66a8d264ffb8574bd68237f0c18f337e198ccfd7d021"
+      />
+    </p>
+  </body>
+</html>
