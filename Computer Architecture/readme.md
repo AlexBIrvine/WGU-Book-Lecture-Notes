@@ -23,4 +23,7 @@
 [3.1 Introduction](./markdown/3.1.md)  
 [3.2 Operations of the computer hardware](./markdown/3.2.md)  
 [3.3 Operands of the computer hardware](./markdown/3.3.md)  
-[3.4 Signed and unsigned numbers](./markdown/3.4.md)
+[3.4 Signed and unsigned numbers](./markdown/3.4.md)  
+[3.5 Representing instructions in the computer](./markdown/3.5.md)  
+[3.6 Logical operations](./markdown/3.6.md)  
+[3.7 Instructions for making decisions](./markdown/3.7.md)
