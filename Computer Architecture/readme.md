@@ -27,3 +27,7 @@
 [3.5 Representing instructions in the computer](./markdown/3.5.md)  
 [3.6 Logical operations](./markdown/3.6.md)  
 [3.7 Instructions for making decisions](./markdown/3.7.md)
+[3.8 Supporting procedures in computer hardware](./markdown/3.8.md)  
+[3.9 Communicating with people](./markdown/3.9.md)  
+[3.10 LEGv8 addressing for wide immediates and addresses](./markdown/3.10.md)  
+[3.11 Parallelism and instructions: synchronization](./markdown/3.11.md)
