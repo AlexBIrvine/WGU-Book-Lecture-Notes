@@ -31,3 +31,9 @@
 [3.9 Communicating with people](./markdown/3.9.md)  
 [3.10 LEGv8 addressing for wide immediates and addresses](./markdown/3.10.md)  
 [3.11 Parallelism and instructions: synchronization](./markdown/3.11.md)
+
+## Chapter 3 - Arithmetic for Computers
+
+[4.1 Introduction](./markdown/4.1.md)  
+[4.2 Addition and subtraction](./markdown/4.2.md)  
+[4.3 Multiplication](./markdown/4.3.md)
