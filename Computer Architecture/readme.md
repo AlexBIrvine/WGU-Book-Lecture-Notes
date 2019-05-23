@@ -35,7 +35,7 @@
 [3.13 A C sort example to put it all together](./markdown/3.13.md)  
 [3.14 Arrays versus pointers](./markdown/3.14.md)
 
-## Chapter 3 - Arithmetic for Computers
+## Chapter 4 - Arithmetic for Computers
 
 [4.1 Introduction](./markdown/4.1.md)  
 [4.2 Addition and subtraction](./markdown/4.2.md)  
