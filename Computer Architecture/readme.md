@@ -30,7 +30,10 @@
 [3.8 Supporting procedures in computer hardware](./markdown/3.8.md)  
 [3.9 Communicating with people](./markdown/3.9.md)  
 [3.10 LEGv8 addressing for wide immediates and addresses](./markdown/3.10.md)  
-[3.11 Parallelism and instructions: synchronization](./markdown/3.11.md)
+[3.11 Parallelism and instructions: synchronization](./markdown/3.11.md)  
+[3.12 Translating and starting a program](./markdown/3.12.md)  
+[3.13 A C sort example to put it all together](./markdown/3.13.md)  
+[3.14 Arrays versus pointers](./markdown/3.14.md)
 
 ## Chapter 3 - Arithmetic for Computers
 
