@@ -39,4 +39,11 @@
 
 [4.1 Introduction](./markdown/4.1.md)  
 [4.2 Addition and subtraction](./markdown/4.2.md)  
-[4.3 Multiplication](./markdown/4.3.md)
+[4.3 Multiplication](./markdown/4.3.md)  
+(other section notes to follow)
+
+## Chapter 5 - The Processor
+
+[5.1 Introduction](./markdown/5.1.md)  
+[5.2 Logic design conventions](./markdown/5.2.md)  
+[5.3 Building a datapath](./markdown/5.3.md)
