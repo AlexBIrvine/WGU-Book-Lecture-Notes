@@ -48,4 +48,5 @@
 [5.2 Logic design conventions](./markdown/5.2.md)  
 [5.3 Building a datapath](./markdown/5.3.md)  
 [5.4 A simple implementation scheme](./markdown/5.4.md)  
-[5.5 An overview of pipelining](./markdown/5.5.md)
+[5.5 An overview of pipelining](./markdown/5.5.md)  
+[5.6 Pipelined datapath and control](./markdown/5.6.md)
