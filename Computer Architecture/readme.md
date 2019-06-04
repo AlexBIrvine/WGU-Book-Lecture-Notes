@@ -50,3 +50,9 @@
 [5.4 A simple implementation scheme](./markdown/5.4.md)  
 [5.5 An overview of pipelining](./markdown/5.5.md)  
 [5.6 Pipelined datapath and control](./markdown/5.6.md)
+
+## Chapter 6 - Memory
+
+[6.1 Introduction](./markdown/6.1.md)  
+[6.2 Memory technologies](./markdown/6.2.md)  
+[6.3 The basics of caches](./markdown/6.3.md)
