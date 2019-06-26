@@ -101,7 +101,7 @@ Laws (like gay marriage) = social.
 
 ## 1.6 - Ideology and the Scope of Government
 
-![Chart of Government control spectrum](./img/1.6.1.jpg)
+![Chart of Government control spectrum](./../img/1.6.1.jpg)
 
 ### Totalitarianism
 
@@ -145,4 +145,4 @@ Socialism isn't fully communism since it only heavily regulates private industry
 
 ### A Two-Dimensional Classification of Ideologies
 
-![Chart of Ideologies](./img/1.7.1.jpg)
+![Chart of Ideologies](./../img/1.7.1.jpg)
