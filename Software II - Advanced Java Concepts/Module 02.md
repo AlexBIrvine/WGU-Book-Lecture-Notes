@@ -92,3 +92,30 @@ It will fail because `HasTail` reference doesn't know `hasHair()`
 ---
 
 ## 2.4 - Understanding Design Principles
+
+<u>**Encapsulation**</u>: Combining fields and methods (mainly getters and setters) to "hide" away data and restrict it from being accessed directly.
+
+<u>**Java Bean**</u>: A design principle for encapsulating data in an object in Java. It has particular rules for a class to be considered a java bean.  
+Java Bean Rules:
+
+1. Properties are private.
+2. Getter for non-boolean properties begins with get.
+3. Getters for boolean properties may begin with is or get.
+4. Setter methods begin with set.
+5. The method name must have a prefix of set/get/is followed by the first letter of the property in uppercase and followed by the rest of the property name.
+
+<u>**Ia-a Relationship**</u>: When an object is an instance of another object, it's said to have a **Is-a Relationship** with that 2nd object.  
+<u>**Has-a Relationship**</u>: When an object contains a particular property, it's said to have a **Has-a** relationship with that property.
+
+---
+
+## 2.5 - Working with Design Patterns
+
+Patterns went over in this section:
+
+- Singleton Pattern
+- Immutable Objects
+- Builder Pattern
+- Factory Pattern
+
+(Not going to expand on this section since I'm doing that in my notes on Head First Design Patterns)
