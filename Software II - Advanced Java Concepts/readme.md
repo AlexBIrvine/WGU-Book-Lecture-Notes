@@ -11,4 +11,6 @@
 
 [2.1 - Designing an Interface](https://github.com/EternalPractice/Public-Notes/blob/master/Software%20II%20-%20Advanced%20Java%20Concepts/Module%2002.md#21---designing-an-interface)  
 [2.2 - Introducing Functional Programming](https://github.com/EternalPractice/Public-Notes/blob/master/Software%20II%20-%20Advanced%20Java%20Concepts/Module%2002.md#22---introducing-functional-programming)  
-[2.3 - Implementing Polymorphism](https://github.com/EternalPractice/Public-Notes/blob/master/Software%20II%20-%20Advanced%20Java%20Concepts/Module%2002.md#23---implementing-polymorphism)
+[2.3 - Implementing Polymorphism](https://github.com/EternalPractice/Public-Notes/blob/master/Software%20II%20-%20Advanced%20Java%20Concepts/Module%2002.md#23---implementing-polymorphism)  
+[2.4 - Understanding Design Principles](https://github.com/EternalPractice/Public-Notes/blob/master/Software%20II%20-%20Advanced%20Java%20Concepts/Module%2002.md#24---understanding-design-principles)  
+[2.5 - Working with Design Patterns](https://github.com/EternalPractice/Public-Notes/blob/master/Software%20II%20-%20Advanced%20Java%20Concepts/Module%2002.md#25---working-with-design-patterns)
