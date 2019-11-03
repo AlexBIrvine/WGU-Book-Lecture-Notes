@@ -14,3 +14,7 @@
 [2.3 - Implementing Polymorphism](https://github.com/EternalPractice/Public-Notes/blob/master/Software%20II%20-%20Advanced%20Java%20Concepts/Module%2002.md#23---implementing-polymorphism)  
 [2.4 - Understanding Design Principles](https://github.com/EternalPractice/Public-Notes/blob/master/Software%20II%20-%20Advanced%20Java%20Concepts/Module%2002.md#24---understanding-design-principles)  
 [2.5 - Working with Design Patterns](https://github.com/EternalPractice/Public-Notes/blob/master/Software%20II%20-%20Advanced%20Java%20Concepts/Module%2002.md#25---working-with-design-patterns)
+
+# Webinar notes (more useful for the project than the book notes)
+
+[1 - Organizing your project]
