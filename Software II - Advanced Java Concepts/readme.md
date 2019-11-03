@@ -28,3 +28,6 @@
 [9 - Getting Started](https://github.com/EternalPractice/Public-Notes/blob/master/Software%20II%20-%20Advanced%20Java%20Concepts/Webinars/9%20-%20Getting%20Started.md)  
 [10 - Converting Between Time Zones](https://github.com/EternalPractice/Public-Notes/blob/master/Software%20II%20-%20Advanced%20Java%20Concepts/Webinars/10%20-%20Converting%20Between%20Time%20Zones.md)  
 [11 - Time Overlaps and Alerts](https://github.com/EternalPractice/Public-Notes/blob/master/Software%20II%20-%20Advanced%20Java%20Concepts/Webinars/11%20-%20Time%20Overlaps%20and%20Alerts.md)
+
+[FAQ](https://github.com/EternalPractice/Public-Notes/blob/master/Software%20II%20-%20Advanced%20Java%20Concepts/Webinars/FAQ.md)  
+[Useful Links](https://github.com/EternalPractice/Public-Notes/blob/master/Software%20II%20-%20Advanced%20Java%20Concepts/Webinars/Useful%20Links.md)
