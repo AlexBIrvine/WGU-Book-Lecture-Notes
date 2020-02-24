@@ -87,4 +87,76 @@ UPDATE statements can have a correlated subquery in the following places:
 - SET clause
 - WHERE clause
 
-...
+Example:
+
+<u>**Task**</u>: Our task is to go back to our historical invoices and give a 10 percent discount to whomever placed our single biggest order for their respective quarter.  
+So in the first quarter, we need to find the single biggest invoice and determine a 10 percent discount on that invoice, then do the same thing for the second quarter, and so on.
+
+<u>**Steps**</u>:
+
+1. ID the row with the highest value for TOTAL_PRICE for any given quarter.
+   - To do this we'll use `TO_CHAR` format `mask Q` on the ORDER_DATE column.
+2. Update an invoice only if it has the hightest TOTAL_PRICE for the quarter.
+
+<center>Example SQL</center>
+
+```SQL
+UPDATE INVOICES INV
+SET TERMS_OF_DISCOUNT = '10 PCT'
+WHERE TOTAL_PRICE = (SELECT MAX(TOTAL_PRICE)
+                     FROM   INVOICES
+                     WHERE  TO_CHAR(INVOICE_DATE, 'RRRR-Q') =
+                            TO_CHAR(INV.INVOICE_DATE, 'RRRR-Q'));
+```
+
+---
+
+## 9.6 - Use the EXISTS and NOT EXISTS Operators
+
+<u>**EXISTS**</u>: Tests if any rows in a subquery exists, returns true if so.
+
+This following example looks for PORTS that have any sort of record at all in the SHIPS table with a HOME_PORT_ID value that matches any of the PORT_ID values.
+
+```SQL
+SELECT PORT_ID, PORT_NAME
+FROM   PORTS P1
+WHERE  EXISTS (SELECT *
+               FROM   SHIPS S1
+               WHERE  P1.PORT_ID = S1.HOME_PORT_ID);
+```
+
+This type of query is sometimes referred to as a `semijoin`.
+
+---
+
+## 9.7 - Use the WITH Clause
+
+<u>**WITH**</u>: Allows you to assign a name to a subquery block, allowing you to reference the nbame from elsewhere in the query.
+
+<center>Example of WITH</center>
+
+```SQL
+WITH
+PORT_BOOKINGS AS (
+    SELECT P.PORT_ID, P.PORT_NAME, COUNT(S.SHIP_ID) CT
+    FROM   PORTS P, SHIPS S
+    WHERE  P.PORT_ID  = S.HOME_PORT_ID
+    GROUP BY P.PORT_ID, P.PORT_NAME
+),
+DENSEST_PORT  AS (
+    SELECT MAX(CT) MAX_CT
+    FROM   PORT_BOOKINGS
+)
+SELECT PORT_NAME
+FROM   PORT_BOOKINGS
+WHERE  CT = (SELECT MAX_CT FROM DENSEST_PORT);
+```
+
+---
+
+## 9.8 - Write Single-Row and Multiple-Row Subqueries
+
+### Single-Row Subqueries
+
+You can run into issues with subqueries when the answer is dependant on only getting 1 (and only 1) result.
+To accomplish this, you can get very specific with multiple subqueries inside a subquery.

@@ -5,4 +5,5 @@
 [Module 3 - Manipulating Data](https://github.com/EternalPractice/Public-Notes/blob/master/Structured%20Query%20Language%20%E2%80%93%20C993/Module%203.md)  
 [Module 4 - Restricting and Sorting Data](https://github.com/EternalPractice/Public-Notes/blob/master/Structured%20Query%20Language%20%E2%80%93%20C993/Module%204.md)  
 [Module 5 - Using SIngle-Row Functions to Customize Output](https://github.com/EternalPractice/Public-Notes/blob/master/Structured%20Query%20Language%20%E2%80%93%20C993/Module%205.md)  
-[Module 8 - Displaying Data from Multiple Tables](https://github.com/EternalPractice/Public-Notes/blob/master/Structured%20Query%20Language%20%E2%80%93%20C993/Module%208.md)
+[Module 8 - Displaying Data from Multiple Tables](https://github.com/EternalPractice/Public-Notes/blob/master/Structured%20Query%20Language%20%E2%80%93%20C993/Module%208.md)  
+[Module 9 - Using Subqueries to Solve Queries](https://github.com/EternalPractice/Public-Notes/blob/master/Structured%20Query%20Language%20%E2%80%93%20C993/Module%209.md)
