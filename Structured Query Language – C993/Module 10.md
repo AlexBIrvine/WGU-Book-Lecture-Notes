@@ -108,5 +108,3 @@ You can use created sequences by using a `sequence_function`:
 ---
 
 ## 10.4 - Create and Maintain Indexes Including Invisible Indexes and Multiple Indexes on the Same Columns
-
-
