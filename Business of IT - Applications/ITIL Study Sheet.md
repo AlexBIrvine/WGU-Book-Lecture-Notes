@@ -348,3 +348,48 @@ Note: Now the order of these steps is changed!! Does the order matter?
 ![5.1](./Img/5.1.jpg)
 
 ---
+
+# Lesson 6 - ITIL Management Practices
+
+## 6.1 Introduction
+
+There are 14 general management practices within ITIL, which are all subject to the 4 dimensions of service management.  
+(They are listed but not explained)
+
+---
+
+## 6.2 General Management Practices
+
+Although there are 14 practices, the ITIL foundations test only covers Continual improvement, Information security management, and relationship management.
+
+<u>**Continual Improvement**</u>: Aligns the organization's practices with changing business needs.
+
+- <u>**CIR (Continual Improvement Register)**</u>: Tracks/manages improvement ideas from identification to final action. This is a database.
+
+<u>**Information Security Management**</u>: Protects information needed by the organization.
+
+<u>**Relationship Management**</u>: Establishes and nurtures links between organization and its stakeholders.
+
+<u>**Supplier Management**</u>: Ensures that the suppliers are managed appropriately to support the provision of products/services.
+
+## 6.3 Service Management Practices
+
+Although there are many practices, the ITIL foundations test only covers Availability management, Capacity and performance management, Change Control, Incident management, IT asset management, Problem management, Release management, Service configuration management, Service continuity management, Service-level management, Service request management, and Service Desk.
+
+<u>**Availability Management**</u>: Ensures that services deliver agreed levels of availability to meet the needs of the customers.
+
+- <u>**MTBF (Measured time between failures)**</u>: Measures how frequently the service fails.
+- <u>**MTRS (Mean time to restore services)**</u>: Measures how quickly service is restored after a failure.
+
+<u>**Capacity and Performance Management**</u>: Ensures that services achieve expected performance.
+
+<u>**Change Control**</u>: Maximizes the number of successful service/product changes.  
+<u>3 types of changes:</u>
+
+1. <u>**Standard Change**</u>: Low-risk, pre-authorized changes that are well understood and fully documented. Does not need additional authorization.
+2. <u>**Normal Change**</u>: Scheduled, assessed and authorized change that follows a process.
+3. <u>**Emergency Change**</u>: Must be implemented ASAP.
+
+<u>**Incident Management**</u>: Minimizes the negative impact of incidents by restoring normal service operation ASAP.
+
+<u>**IT Asset Management**</u>: Manages the full life cycle of all IT assets.
