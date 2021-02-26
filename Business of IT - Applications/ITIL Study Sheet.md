@@ -393,3 +393,12 @@ Although there are many practices, the ITIL foundations test only covers Availab
 <u>**Incident Management**</u>: Minimizes the negative impact of incidents by restoring normal service operation ASAP.
 
 <u>**IT Asset Management**</u>: Manages the full life cycle of all IT assets.
+
+
+
+"Craig Marduk": "Your favorite wrestler Marduk is back in Season 2 DLC!\n
+Marduk has a unique grappling style which involves using 'mounts' as a way to land his high damage mixups, and keeping the opponent away from him through defensively utilizing his long pokes.\n
+Marduk's strong points are definitely his defense acquired thanks to his long reach, as well as his many mixup potential in neutral, oki, and mount.\n
+Combined with his easy commands, Marduk is definitely a easy and strong character that you can see in tournaments.\n
+His biggest weakness is that his moves are sidesteppable, and that he surprisingly does not do well in close combat.\n
+If you were looking for a burly character with high damage who likes playing keepaway until he is ready, surprise! Marduk will be perfect for you!\nRecommended Players: Knee, The JON",
